@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="marti@pericay.com" />
+	<!--meta name="robots" content="noindex"-->
+
+    <title>Ciència Ciutadana</title>
+
+    <!-- Custom CSS -->
+    <link href="css/ui.css" rel="stylesheet" />
+
+ </head>
+
+<body>
+	
+    <nav class="navbar navbar-inverse" id="subbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>		
+          </button>
+	  
+		  <a href=""><img src="img/logos/mnat.png" alt="MCNB logo" id="mcnbLogo"></a>
+          
+        </div>
+		
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+			<li><a data-toggle="modal" data-id="about" title="About" class="open-textModal" href="#textModal">About</a></li>
+			<li><a data-toggle="modal" data-id="help" title="Help" class="open-textModal" href="#textModal">Help</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>	
+
+    <div id="wrapper">
+    	
+        	<form class='form-inline' role='search'><div class='form-group' id='searchProj'><input id='taxon' class='form-control typeahead' data-provide='typeahead' placeholder='Taxon'></div></form>
+			<div id='results'></div>
+			<ul id="menuProj"></ul>
+        </div>
+ 
+    </div>
+    <!-- /#wrapper -->
+       
+	<script src="js/config.js"></script>
+	<script src="js/lib/require.js" data-main="ui"></script>
+
+    
+</body>
+
+</html>
