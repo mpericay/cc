@@ -2,7 +2,7 @@
  * @author Martí Pericay <marti@pericay.com>
  */
 
-define([ 'turf', 'bootstrap', 'typeahead'], function(turf, jsts) {
+define([ 'turf', 'bootstrap', 'typeahead'], function(turf) {
     "use strict";
     	
 	var params = {};
