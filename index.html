@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="marti@pericay.com" />
-	<!--meta name="robots" content="noindex"-->
+	<meta name="author" content="hey@marccots.com" />
+	<meta name="robots" content="noindex">
 
     <title>Ciència Ciutadana</title>
 
@@ -19,7 +20,7 @@
 
 <body>
 	
-    <nav class="navbar navbar-inverse" id="subbar">
+    <nav class="navbar" id="subbar">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -29,14 +30,15 @@
             <span class="icon-bar"></span>		
           </button>
 	  
-		  <a href=""><img src="img/logos/mnat.png" alt="MCNB logo" id="mcnbLogo"></a>
+		  <a href=""><img class="logos" src="img/logos/mnat.png" alt="MCNB logo" id="mcnbLogo"></a>
+		  <a href=""><img class="logos" src="img/logos/gene.png" alt="Generalitat logo" id="geneLogo"></a>
           
         </div>
 		
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-			<li><a data-toggle="modal" data-id="about" title="About" class="open-textModal" href="#textModal">About</a></li>
-			<li><a data-toggle="modal" data-id="help" title="Help" class="open-textModal" href="#textModal">Help</a></li>
+			<li><a data-toggle="modal" data-id="about" title="Contact" class="open-textModal" href="#textModal">Nou projecte</a></li>
+			<li><a data-toggle="modal" data-id="help" title="Platforms" class="open-textModal" href="#textModal">Recursos/Plataformes</a></li>
           </ul>
 
         </div>
@@ -45,8 +47,13 @@
 
     <div id="wrapper">
     	
-        	<form class='form-inline' role='search'><div class='form-group' id='searchProj'><input id='taxon' class='form-control typeahead' data-provide='typeahead' placeholder='Taxon'></div></form>
-			<div id='results'></div>
+        	<form class="form-inline" role="search">
+				<div class="form-group" id="searchProj"><input id="proj" class="form-control" placeholder="Projecte"></div>
+				<div class="form-group" id="searchBio"><input id="bio" class="form-control" placeholder="Àmbit biològic"></div>
+				<div class="form-group" id="searchLoc"><input id="loc" class="form-control" placeholder="Localització"></div>
+				<button type="button" id="searchBtn" class="btn btn-primary">Buscar</button>
+			</form>
+			<div id="results"></div>
 			<ul id="menuProj"></ul>
         </div>
  
