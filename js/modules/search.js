@@ -4,32 +4,27 @@
 
 define([ 'turf', 'bootstrap'], function(turf) {
     "use strict";
-    	
-	var params = {};
-    location.search.substr(1).split("&").forEach(function(item) {
-        var kv = item.split("=");
-        params[kv[0]] = kv[1];
-    });
-
-    // for API
-    var zoom = (params.hasOwnProperty('zoom') ? params.zoom : '3');
-    var lat = (params.hasOwnProperty('lat') ? params.lat : '29.085599');
-    var lon = (params.hasOwnProperty('lon') ? params.lon : '0.966797');
     
-    var point = {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [lon, lat]
-      }
-    };
-    
+    // ambits data
+    var ambits;
     $.get( "data/ambits_cc.geojson", function( data ) {
-        for (var i = 0; i < data.features.length; i+=1) {
-            $("#results").append("<br>Distance to " + data.features[i].properties.description + ": " + distanceToPoly(point, data.features[i]) + " kms");
-          }
+        ambits = data;
       }, "json" );
+    
+    var printDistance = function(lat, lon) {
+        // just an example
+        var point = {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "Point",
+            "coordinates": [(lat? lat : 0.966797), (lon ? lon : 29.085599)]
+          }
+        };    
+        for (var i = 0; i < ambits.features.length; i+=1) {
+                $("#results").append("<br>Distance to " + ambits.features[i].properties.description + ": " + distanceToPoly(point, ambits.features[i]) + " kms");
+              }
+    };
     
     var distanceToPoly = function(point, poly) {
         if(turf.booleanWithin(point, poly)) return 0;
@@ -46,6 +41,12 @@ define([ 'turf', 'bootstrap'], function(turf) {
           if(pt.properties.tipus === value) return true
         })
         return matchingPoints;
+    }
+    
+    return {
+	   printDistance: function(lat, lon) {
+			return printDistance(lat, lon);
+       }
     }
 
 });

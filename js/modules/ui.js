@@ -2,10 +2,12 @@
  * @author Martí Pericay <marti@pericay.com>
  */
 
-define(['lunr', 'bootstrap', 'typeahead'], function(lunr) {
+define(['lunr', 'search', 'bootstrap', 'typeahead'], function(lunr, search) {
     "use strict";
     	
     var idx;
+    
+    search.printDistance();
     
     $.get( "data/projects.geojson", function( data ) {
             idx = lunr(function () {
