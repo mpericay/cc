@@ -2,14 +2,43 @@
  * @author Martí Pericay <marti@pericay.com>
  */
 
-define([ 'turf', 'bootstrap'], function(turf) {
+define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
     "use strict";
+    
+    //index data
+    var idx;
+    
+    // projects data
+    var projects;
+    var projectsDb;
     
     // ambits data
     var ambits;
+    
     $.get( "data/ambits_cc.geojson", function( data ) {
         ambits = data;
       }, "json" );
+    
+    var loadData = function(url, fields) {
+            $.get( url, function( data ) {
+                projects = data.features;
+                idx = lunr(function () {
+                    this.ref('id')
+                    this.field('nom_del_projecte')
+                  
+                    data.features.forEach(function(entry){
+                        this.add(entry.properties);
+                    }, this);
+                    
+                projectsDb = projects.reduce(function (acc, document) {
+                    acc[document.properties.id] = document
+                    return acc
+                }, {})
+            });
+        
+      }, "json" );
+
+    };
     
     var printDistance = function(lat, lon) {
         // just an example
@@ -46,6 +75,19 @@ define([ 'turf', 'bootstrap'], function(turf) {
     return {
 	   printDistance: function(lat, lon) {
 			return printDistance(lat, lon);
+       },
+       loadData: function(url, fields) {
+			return loadData(url, fields);
+       },
+       search: function(val) {
+			return idx.search(val);
+       },
+       getProject: function(id) {
+            return projectsDb[id];
+        /*      return projects.filter(obj => {
+                return obj.properties.cartodb_id === id
+              })
+        */
        }
     }
 
