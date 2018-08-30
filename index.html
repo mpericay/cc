@@ -39,12 +39,11 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
 			<li><a title="Home" href="#">Inici</a></li>
-			<li><a title="Contact" href="#">Nou projecte</a></li>
+			<li><a title="Contact" href="#">Contacte</a></li>
 			<li><a title="Platforms" href="#">Recursos/Plataformes</a></li>
           </ul>
 
 		</div>
-
 
 		<div id="wrapper">
         	<form class="form-inline" role="search">
@@ -53,7 +52,10 @@
 				<div class="form-group" id="searchLoc"><input id="loc" class="form-control" placeholder="Localització"></div>
 				<button type="button" id="searchBtn" class="btn btn-primary">Buscar</button>
 			</form>
-			<div id="results"><ol id="resultsList"></ol></div>
+			<div id="results">
+				<p id="noResults"></p>
+				<ol id="resultsList" class="resultsList"></ol>
+			</div>
 			<ul id="menuProj"></ul>
         </div>
 		<!-- /#wrapper -->
