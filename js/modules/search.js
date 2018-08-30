@@ -9,8 +9,7 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
     var idx;
     
     // projects data
-    var projects;
-    var projectsDb;
+    var projectsById;
     
     // ambits data
     var ambits;
@@ -21,7 +20,10 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
     
     var loadData = function(url, fields) {
             $.get( url, function( data ) {
-                projects = data.features;
+                projectsById = data.features.reduce(function (acc, document) {
+                    acc[document.properties.id] = document;
+                    return acc;
+                }, {});
                 idx = lunr(function () {
                     this.ref('id')
                     this.field('nom_del_projecte')
@@ -30,10 +32,7 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
                         this.add(entry.properties);
                     }, this);
                     
-                projectsDb = projects.reduce(function (acc, document) {
-                    acc[document.properties.id] = document
-                    return acc
-                }, {})
+                
             });
         
       }, "json" );
@@ -83,11 +82,7 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
 			return idx.search(val);
        },
        getProject: function(id) {
-            return projectsDb[id];
-        /*      return projects.filter(obj => {
-                return obj.properties.cartodb_id === id
-              })
-        */
+            return projectsById[id];
        }
     }
 
