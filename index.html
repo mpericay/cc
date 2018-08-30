@@ -19,9 +19,13 @@
  </head>
 
 <body>
-	
-    <nav class="navbar" id="subbar">
-      <div class="container-fluid">
+	<div class="container-fluid">
+		<div class="header">
+			  <a href=""><img class="logos" src="img/logos/mnat.png" alt="MCNB logo" id="mcnbLogo"></a>
+			  <a href=""><img class="logos" src="img/logos/gene.png" alt="Generalitat logo" id="geneLogo"></a>   
+		</div>
+
+      
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -29,24 +33,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>		
           </button>
-	  
-		  <a href=""><img class="logos" src="img/logos/mnat.png" alt="MCNB logo" id="mcnbLogo"></a>
-		  <a href=""><img class="logos" src="img/logos/gene.png" alt="Generalitat logo" id="geneLogo"></a>
           
         </div>
 		
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-			<li><a data-toggle="modal" data-id="about" title="Contact" class="open-textModal" href="#textModal">Nou projecte</a></li>
-			<li><a data-toggle="modal" data-id="help" title="Platforms" class="open-textModal" href="#textModal">Recursos/Plataformes</a></li>
+          <ul class="nav navbar-nav navbar-left">
+			<li><a title="Home" href="#">Inici</a></li>
+			<li><a title="Contact" href="#">Nou projecte</a></li>
+			<li><a title="Platforms" href="#">Recursos/Plataformes</a></li>
           </ul>
 
-        </div>
-      </div>
-    </nav>	
+		</div>
 
-    <div id="wrapper">
-    	
+
+		<div id="wrapper">
         	<form class="form-inline" role="search">
 				<div class="form-group" id="searchProj"><input id="proj" class="form-control" placeholder="Projecte"></div>
 				<div class="form-group" id="searchBio"><input id="bio" class="form-control" placeholder="Àmbit biològic"></div>
@@ -56,10 +56,11 @@
 			<div id="results"><ol id="resultsList"></ol></div>
 			<ul id="menuProj"></ul>
         </div>
+		<!-- /#wrapper -->
  
     </div>
-    <!-- /#wrapper -->
-       
+	<!-- /#container -->
+	
 	<script src="js/config.js"></script>
 	<script src="js/lib/require.js" data-main="ui"></script>
 
