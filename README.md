@@ -1,4 +1,4 @@
-##Ciencia ciutadana
+## Ciencia ciutadana
 
 Desenvolupament d'un visor de projectes participatius de ciència ciutadana.
 
