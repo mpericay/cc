@@ -1,6 +1,26 @@
+/* Header logos */
+
+.header {
+    padding: 20px;
+    display: table;
+    background: #f5f5f5;
+    width: 100%;
+}
+
+.logos-left, .logos-right {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.logos-right {
+    text-align: right;
+}
+
 .logos {
     height: 80px;
 }
+
+/* Header logos end */
 
 img.searchPic {
     height: 80px;
