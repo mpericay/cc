@@ -1,3 +1,11 @@
+/* General */
+
+body > .container-fluid {
+    padding: 0;
+}
+
+/* General end */
+
 /* Header logos */
 
 .header {
