@@ -1,15 +1,3 @@
-body > .container-fluid {
-    padding: 0;
-}
-
-.header { 
-	padding: 40px 20px;
-}
-
-.navbar-collapse {
-    background: #333;
-}
-
 .logos {
     height: 80px;
 }
