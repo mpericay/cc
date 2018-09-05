@@ -50,6 +50,25 @@ body > .container-fluid {
 
 /* Menú end */
 
+/* Buscador */
+
+.form-inline {
+    padding: 40px 0;
+    text-align: right;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 300px;
+    padding-bottom: 20px;
+}
+
+.form-control {
+    min-width: 100%;
+}
+
+/* Buscador end */
+
 img.searchPic {
     height: 80px;
 }
