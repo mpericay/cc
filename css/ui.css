@@ -30,6 +30,26 @@ body > .container-fluid {
 
 /* Header logos end */
 
+/* Menú */
+
+.menu {
+    background: #333;
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+.menu li a {
+    padding: 10px 15px !important;
+    color: #fff;
+}
+
+.menu li a:hover {
+    background: none !important;
+    color: #e8b271;
+}
+
+/* Menú end */
+
 img.searchPic {
     height: 80px;
 }
