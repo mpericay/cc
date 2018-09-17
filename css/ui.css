@@ -16,6 +16,10 @@ body > .container-fluid {
 
 button:focus, input:focus { outline:0; }
 
+img {
+    object-fit: cover;
+}
+
 /* General end */
 
 /* Header logos */
