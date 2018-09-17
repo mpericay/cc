@@ -2,6 +2,7 @@
 
 body {
     background: #f5f5f5 !important;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 body > .container-fluid {
@@ -80,11 +81,23 @@ img {
     position: relative;
     height: 100%;
     display: table;
+    max-width: 450px;
 }
 
 .intro-wrap > div {
     display: table-cell;
     vertical-align: middle;
+}
+
+.topTitle {
+    font-weight: 700;
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.topSubtitle {
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .form-inline {
@@ -192,6 +205,10 @@ img {
         padding: 50px 40px 70px;
     }
 
+    .intro-wrap {
+        margin: 0 auto;
+    }
+
     .form-inline {
         text-align: center;
         margin-top: 30px;
@@ -250,6 +267,10 @@ img {
 
     .row-search { display: block; }
 
+    .intro-wrap {
+        margin: 0 auto;
+    }
+
     .form-inline { 
         text-align: center; 
         margin: 40px; 
@@ -291,6 +312,12 @@ img {
     /* Buscador */
 
     .row-search { display: block; }
+
+    .search-wrap { padding: 20px; }
+
+    .intro-wrap {
+        margin: 0 auto;
+    }
 
     .form-inline { 
         margin: 20px 0; 
