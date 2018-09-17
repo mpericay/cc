@@ -8,6 +8,10 @@ body > .container-fluid {
     padding: 0;
 }
 
+#wrapper {
+    padding-bottom: 50px;
+}
+
 .container { max-width: 100%; }
 
 button:focus, input:focus { outline:0; }
@@ -169,6 +173,7 @@ button:focus, input:focus { outline:0; }
 @media (min-width: 768px) and (max-width: 991px) { 
 
     /* Buscador */
+
     .search-wrap {
         padding: 50px 40px 70px;
     }
@@ -187,7 +192,40 @@ button:focus, input:focus { outline:0; }
         margin: 0 10px;
         max-width: calc(300px - 20px);
     }
+
     /* Buscador end */
+
+    /* Llista projectes */
+
+    .project-wrap:nth-child(even) > img {
+        margin-left: 0;
+    }
+
+    .project-wrap:nth-child(even) > h2 {
+        left: 145px;
+    }
+
+    .project-wrap:nth-child(even) > p {
+        left: 165px;
+    }
+
+
+    .searchTitle {
+        float: right;
+        width: calc(100% - 130px);
+        left: 130px;
+    }
+
+    .searchPic {
+        height: 130px;
+        width: 130px;
+    }
+
+    .searchSubtitle {
+        left: 150px;
+    }
+
+    /* Llista projectes end */
 
 }
 
@@ -195,6 +233,7 @@ button:focus, input:focus { outline:0; }
 @media (min-width: 481px) and (max-width: 767px) { 
 
     /* Buscador */
+
     .form-inline { 
         text-align: center; 
         margin: 40px; 
@@ -203,7 +242,30 @@ button:focus, input:focus { outline:0; }
     .form-group {
         margin: 0px auto;
     }
+
     /* Buscador end */
+
+    /* Llista projectes */
+
+    #noResults { margin-left: 15px; }
+
+    .searchTitle {
+        float: right;
+        width: calc(100% - 165px);
+        left: 150px;
+    }
+
+    .searchPic {
+        height: 130px;
+        width: 150px;
+        margin-left: 0;
+    }
+
+    .searchSubtitle {
+        left: 170px;
+    }
+
+    /* Llista projectes end */
 
 }
  
@@ -211,6 +273,7 @@ button:focus, input:focus { outline:0; }
 @media (max-width: 480px) { 
 
     /* Buscador */
+
     .form-inline { 
         margin: 20px 0; 
     }
@@ -222,7 +285,30 @@ button:focus, input:focus { outline:0; }
     .boto {
         max-width: 100%;
     }
+
     /* Buscador end */
+
+    /* Llista projectes */
+
+    #noResults { margin-left: 15px; }
+
+    .searchTitle {
+        float: right;
+        width: calc(100% - 165px);
+        left: 150px;
+    }
+
+    .searchPic {
+        height: 130px;
+        width: 150px;
+        margin-left: 0;
+    }
+
+    .searchSubtitle {
+        left: 170px;
+    }
+
+    /* Llista projectes end */
 
 }
 

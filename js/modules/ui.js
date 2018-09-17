@@ -30,7 +30,7 @@ define(['search', 'bootstrap', 'typeahead'], function(search) {
             h2 = document.createElement('h2'),
             p = document.createElement('p')
         
-        li.className = "col-lg-4 col-md-6 col-xs-12 project-wrap"
+        li.className = "col-lg-4 col-sm-6 col-xs-12 project-wrap"
         h2.textContent = doc.properties.nom_del_projecte;
         h2.className = "searchTitle";
         img.setAttribute("src", "img/projects/example.jpg");
