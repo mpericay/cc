@@ -74,7 +74,15 @@ img {
     margin-bottom: 40px;
 }
 
+.row-search { display: flex; }
+
 .intro-wrap {
+    position: relative;
+    height: 100%;
+    display: table;
+}
+
+.intro-wrap > div {
     display: table-cell;
     vertical-align: middle;
 }
@@ -178,6 +186,8 @@ img {
 
     /* Buscador */
 
+    .row-search { display: block; }
+
     .search-wrap {
         padding: 50px 40px 70px;
     }
@@ -238,6 +248,8 @@ img {
 
     /* Buscador */
 
+    .row-search { display: block; }
+
     .form-inline { 
         text-align: center; 
         margin: 40px; 
@@ -277,6 +289,8 @@ img {
 @media (max-width: 480px) { 
 
     /* Buscador */
+
+    .row-search { display: block; }
 
     .form-inline { 
         margin: 20px 0; 
