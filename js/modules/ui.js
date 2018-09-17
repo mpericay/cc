@@ -16,7 +16,7 @@ define(['search', 'bootstrap', 'typeahead'], function(search) {
           if (!results.length) {
             $("#noResults").html("No s'han trobat resultats");
           } else {
-            $("#noResults").html("Mostrant " + results.length + " resultats");
+            $("#noResults").html("Mostrant <b>" + results.length + "</b> resultats");
             for(var i=0; i < results.length; i++) {
               var proj = search.getProject(results[i].ref);
               $("#resultsList").append(buildSearchResult(proj));
@@ -30,6 +30,7 @@ define(['search', 'bootstrap', 'typeahead'], function(search) {
             h2 = document.createElement('h2'),
             p = document.createElement('p')
         
+        li.className = "col-lg-4 col-md-6 col-xs-12 project-wrap"
         h2.textContent = doc.properties.nom_del_projecte;
         h2.className = "searchTitle";
         img.setAttribute("src", "img/projects/example.jpg");
