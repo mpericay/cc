@@ -67,7 +67,14 @@
 						<div class="col-md-offset-1 col-md-4 col-lg-3">
 				        	<form class="form-inline" role="search">
 								<div class="form-group" id="searchProj"><input id="proj" class="form-input" placeholder="Projecte"></div>
-								<div class="form-group" id="searchBio"><input id="bio" class="form-input" placeholder="Àmbit biològic"></div>
+								<div class="form-group" id="searchBio"><input list="ambits" id="bio" class="form-input" placeholder="Àmbit biològic"></div>
+								  <datalist id="ambits">
+									<option value="Ambiental">
+									<option value="Aus">
+									<option value="Coleòpters">
+									<option value="General">
+									<option value="Líquens">
+								  </datalist>
 								<div class="form-group" id="searchLoc"><input id="loc" class="form-input" placeholder="Localització"></div>
 								<button type="button" id="searchBtn" class="boto">Buscar</button>
 							</form>
