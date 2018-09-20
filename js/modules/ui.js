@@ -4,8 +4,6 @@
 
 define(['search', 'bootstrap', 'typeahead'], function(search) {
     "use strict";
-    	
-    var idx;
     
     search.loadData("data/projects.geojson");
     
@@ -41,9 +39,54 @@ define(['search', 'bootstrap', 'typeahead'], function(search) {
         li.appendChild(h2);
         li.appendChild(img);
         li.appendChild(p);
+        
+        $(li).click(function () {
+            //window.location.hash = 'xyz';
+            window.history.pushState(null, 'Project', '/'+doc.properties.nom_del_projecte);
+            $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
+            $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
+            $("#textModal").modal();
+            return false;
+        });
 
 	  return li
-	}    
+	};
+    
+    var buildSheetHtml = function (props) {
+        var parent = document.createElement('p'),
+            img = document.createElement('img')
+        
+        img.setAttribute("src", "img/projects/example.jpg");
+        img.className = "sheetPic";
+        
+        parent.appendChild(img);
+        parent.appendChild(buildSheetItem("Ambit biològic", props.ambit_biologic));
+        parent.appendChild(buildSheetItem("Ambit geogràfic", props.ambit_geografic));
+        parent.appendChild(buildSheetItem("", props.entitat, "house"));        
+        parent.appendChild(buildSheetItem("Descripció del projecte", props.activitat_prevista));
+        parent.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
+        parent.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));
+        
+        return parent;
+    };
+    
+    var buildSheetItem = function(header, text, className) {
+        var parent =  document.createElement('p'),
+            itemHeader = document.createElement('h4'),
+            itemText = document.createElement('p')
+        itemHeader.textContent = header;
+        itemText.textContent = text;
+        if (className) itemText.className = className;
+        
+        parent.appendChild(itemHeader);
+        parent.appendChild(itemText);
+        return parent;
+    }
+    
+    // undo URL navigation when hiding modal
+    $('#textModal').on('hidden.bs.modal', function () {
+        window.history.pushState(null, 'Home', '/');
+    });
     
 
 });
