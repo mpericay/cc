@@ -18,7 +18,7 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
         ambits = data;
       }, "json" );
     
-    var loadData = function(url, fields) {
+    var loadData = function(url, callback) {
             $.get( url, function( data ) {
                 projectsById = data.features.reduce(function (acc, document) {
                     acc[document.properties.id] = document;
@@ -32,8 +32,9 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
                         this.add(entry.properties);
                     }, this);
                     
-                
             });
+                
+            if(callback instanceof Function) callback();
         
       }, "json" );
 
@@ -75,8 +76,8 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
 	   printDistance: function(lat, lon) {
 			return printDistance(lat, lon);
        },
-       loadData: function(url, fields) {
-			return loadData(url, fields);
+       loadData: function(url, callback) {
+			return loadData(url, callback);
        },
        search: function(val) {
 			return idx.search(val);

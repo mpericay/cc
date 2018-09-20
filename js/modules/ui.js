@@ -5,10 +5,9 @@
 define(['search', 'bootstrap'], function(search) {
     "use strict";
     
-    search.loadData("data/projects.geojson");
-    
-    $("#searchBtn").on("click", function() {
-          var results = search.search($("#proj").val());
+    var makeSearch = function(value) {
+        value = value ? value : "";
+        var results = search.search(value);
           $("#resultsList").empty();
           //if results
           if (!results.length) {
@@ -19,8 +18,8 @@ define(['search', 'bootstrap'], function(search) {
               var proj = search.getProject(results[i].ref);
               $("#resultsList").append(buildSearchResult(proj));
             };
-          }
-        });
+          }        
+    };
     
 	var buildSearchResult = function (doc) {
         var li = document.createElement('li'),
@@ -82,6 +81,12 @@ define(['search', 'bootstrap'], function(search) {
         parent.appendChild(itemText);
         return parent;
     }
+    
+    search.loadData("data/projects.geojson", makeSearch);
+    
+    $("#searchBtn").on("click", function() {
+            makeSearch($("#proj").val());
+    });
     
     // undo URL navigation when hiding modal
     $('#textModal').on('hidden.bs.modal', function () {
