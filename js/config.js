@@ -9,7 +9,6 @@ var require = (function() {
             "css": "//cdnjs.cloudflare.com/ajax/libs/require-css/0.1.10/css.min",
             "turf": "//cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min",
             "jquery": "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min",
-			"typeahead": "//cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min",
 			"lunr": "//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.2/lunr.min"
 		},
 		shim: {

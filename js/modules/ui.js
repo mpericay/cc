@@ -2,7 +2,7 @@
  * @author Martí Pericay <marti@pericay.com>
  */
 
-define(['search', 'bootstrap', 'typeahead'], function(search) {
+define(['search', 'bootstrap'], function(search) {
     "use strict";
     
     search.loadData("data/projects.geojson");
