@@ -41,7 +41,7 @@ define(['search', 'bootstrap'], function(search) {
         
         $(li).click(function () {
             //window.location.hash = 'xyz';
-            window.history.pushState(null, 'Project', '/'+doc.properties.nom_del_projecte);
+            window.history.pushState(null, 'Project', doc.properties.nom_del_projecte);
             $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
             $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
             $("#textModal").modal();
@@ -90,7 +90,7 @@ define(['search', 'bootstrap'], function(search) {
     
     // undo URL navigation when hiding modal
     $('#textModal').on('hidden.bs.modal', function () {
-        window.history.pushState(null, 'Home', '/');
+        window.history.pushState(null, 'Home', '.');
     });
     
 
