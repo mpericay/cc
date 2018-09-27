@@ -75,7 +75,7 @@ define(['search', 'bootstrap'], function(search) {
         //$(div).append('<a href="http://www.facebook.com/sharer.php?u=' + location +'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>');
         
         //Twitter
-        $(div).append('<a href="https://twitter.com/share?url=' + location +'&amp;text=' + text + '&amp;hashtags=" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>');
+        $(div).append('<a href="https://twitter.com/share?url=' + location +'&amp;text=' + text + '&amp;hashtags=" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" class="share-buttons"/></a>');
     };
     
     var buildSheetItem = function(header, text, className) {
