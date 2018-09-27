@@ -20,9 +20,9 @@
         <div id="navbar" class="menu navbar-collapse collapse">
         	<div class="container">
 				<ul class="nav navbar-nav navbar-left">
-					<li><a title="Home" href="#">Inici</a></li>
-					<li><a title="Contact" href="#">Contacte</a></li>
-					<li><a title="Platforms" href="#">Recursos/Plataformes</a></li>
+					<li><a title="Home" href="index.php">Inici</a></li>
+					<li><a title="Contact" href="contacte.php">Contacte</a></li>
+					<li><a title="Platforms" href="recursos.php">Recursos/Plataformes</a></li>
 				</ul>
 			</div>
 		</div>  
