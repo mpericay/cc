@@ -69,6 +69,17 @@ img {
     padding: 10px 30px;
     text-align: right;
 }
+/* Footer end */
+
+/* Social */
+#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+}
+/* Social end */
 
 /* Buscador */
 

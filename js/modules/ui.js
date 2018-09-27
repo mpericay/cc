@@ -64,9 +64,18 @@ define(['search', 'bootstrap'], function(search) {
         parent.appendChild(buildSheetItem("", props.entitat, "house"));        
         parent.appendChild(buildSheetItem("Descripció del projecte", props.activitat_prevista));
         parent.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
-        parent.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));
-        
+        parent.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
+        buildSocial(parent, props.nom_del_projecte);
         return parent;
+    };
+    
+    var buildSocial = function(div, text) {
+        $(div).append("<h4>Comparteix-ho</h4>");
+        //Facebook (old?)
+        //$(div).append('<a href="http://www.facebook.com/sharer.php?u=' + location +'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>');
+        
+        //Twitter
+        $(div).append('<a href="https://twitter.com/share?url=' + location +'&amp;text=' + text + '&amp;hashtags=" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>');
     };
     
     var buildSheetItem = function(header, text, className) {
