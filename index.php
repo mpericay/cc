@@ -23,14 +23,13 @@
 	<div class="container-fluid">
 		
 		<?php include "header.php" ?>
-		
-		<?php $url = $_SERVER['REQUEST_URI'];
-			if($url == "contacte") include "contacte.php";
-			else if($url == "recursos") include "plataformes.php";
-			else {
-		?>
 
 		<div id="wrapper">
+		<?php $url = $_SERVER['REQUEST_URI'];
+			if(basename($url) == "contacte.php") include "contingut/contacte.php";
+			else if(basename($url) == "recursos.php") include "contingut/recursos.php";
+			else {
+		?>			
 			<div class="search-wrap">
 				<div class="container">
 					<div class="row row-search">
@@ -87,9 +86,8 @@
 			</div>
 		
 		  </div>
+		<?php } ?>			  
 		</div>
-		
-		<?php } ?>	
 		
 		<?php include "footer.php" ?>
  
