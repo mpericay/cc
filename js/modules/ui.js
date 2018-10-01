@@ -52,19 +52,22 @@ define(['search', 'bootstrap'], function(search) {
 	};
     
     var buildSheetHtml = function (props) {
-        var parent = document.createElement('p'),
-            img = document.createElement('img')
+        var parent = document.createElement('div'),
+            img = document.createElement('img'),
+            txtWrap = document.createElement('div')
         
         img.setAttribute("src", "img/projects/example.jpg");
         img.className = "sheetPic";
+        txtWrap.className = "txtWrap";
         
         parent.appendChild(img);
-        parent.appendChild(buildSheetItem("Ambit biològic", props.ambit_biologic));
-        parent.appendChild(buildSheetItem("Ambit geogràfic", props.ambit_geografic));
-        parent.appendChild(buildSheetItem("", props.entitat, "house"));        
-        parent.appendChild(buildSheetItem("Descripció del projecte", props.activitat_prevista));
-        parent.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
-        parent.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
+        parent.appendChild(txtWrap);
+        txtWrap.appendChild(buildSheetItem("Ambit biològic", props.ambit_biologic));
+        txtWrap.appendChild(buildSheetItem("Ambit geogràfic", props.ambit_geografic));
+        txtWrap.appendChild(buildSheetItem("", props.entitat, "house"));        
+        txtWrap.appendChild(buildSheetItem("Descripció del projecte", props.activitat_prevista));
+        txtWrap.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
+        txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
         buildSocial(parent, props.nom_del_projecte);
         return parent;
     };
