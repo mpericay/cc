@@ -208,12 +208,66 @@ img.share-buttons {
 /* Llista projectes end */
 
     
-/* Sheet - Fitxa */
-.sheetPic {
-    height: 130px;
-    width: 150px;
-    margin-left: 0;       
+/* Fitxa */
+
+.modal-header {
+    font-size: 15px;
+    font-weight: 500;
 }
+
+.modal-body { 
+    padding: 0 !important; 
+    height: 70vh;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+
+.sheetPic {
+    height: 100%;
+    margin-left: 0;
+    position: absolute;
+    width: 50%;
+}
+
+.txtWrap {
+    width: 50%;
+    position: relative;
+    margin-left: 50%;
+    height: 70vh;
+    overflow-y: scroll;
+    padding: 30px;
+    overflow-x: hidden;
+    background: #f5f5f5;
+}
+
+.txtWrap p {
+    margin-bottom: 20px;
+}
+
+.txtWrap p:last-child {
+    word-break: break-word;
+}
+
+.txtWrap h4 {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.modal-footer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.modal-footer img {
+    width: 20px;
+    cursor: pointer;
+}
+
+/* Fitxa end */
 
 .house:before {
     background-image: url(../img/icons/target.svg);    

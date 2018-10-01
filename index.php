@@ -81,7 +81,7 @@
 			  </div>
 			  <div class="modal-body"></div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<img data-dismiss="modal" src="img/icons/arrow.svg">
 			  </div>
 			</div>
 		
