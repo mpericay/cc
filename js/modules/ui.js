@@ -54,17 +54,29 @@ define(['search', 'bootstrap'], function(search) {
     var buildSheetHtml = function (props) {
         var parent = document.createElement('div'),
             img = document.createElement('img'),
+            subTitle = document.createElement('div'),
+            subPlace = document.createElement('div'),
+            subAssociation = document.createElement('div'),
             txtWrap = document.createElement('div')
         
         img.setAttribute("src", "img/projects/example.jpg");
         img.className = "sheetPic";
         txtWrap.className = "txtWrap";
+        subTitle.className = "subTitle";
         
+        // write subtitle bar and image
+        parent.appendChild(subTitle);
         parent.appendChild(img);
         parent.appendChild(txtWrap);
+        subPlace.textContent = props.ambit_geografic;
+        subPlace.className = "subPlace";
+        subAssociation.textContent = props.entitat;
+        subAssociation.className = "subAssociation";
+        subTitle.appendChild(subPlace);
+        subTitle.appendChild(subAssociation);
+        
+        // write all items of sheet
         txtWrap.appendChild(buildSheetItem("Ambit biològic", props.ambit_biologic));
-        txtWrap.appendChild(buildSheetItem("Ambit geogràfic", props.ambit_geografic));
-        txtWrap.appendChild(buildSheetItem("", props.entitat, "house"));        
         txtWrap.appendChild(buildSheetItem("Descripció del projecte", props.activitat_prevista));
         txtWrap.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
         txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        

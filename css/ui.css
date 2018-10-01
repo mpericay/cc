@@ -231,6 +231,13 @@ img.share-buttons {
     width: 50%;
 }
 
+.subTitle {
+    height: 50px;
+    padding: 10px;
+    overflow-x: hidden;
+    background: #fff;
+}
+
 .txtWrap {
     width: 50%;
     position: relative;
