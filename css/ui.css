@@ -263,15 +263,12 @@ img.share-buttons {
 }
 
 .modal-footer img {
-    width: 20px;
+    width: 15px;
     cursor: pointer;
 }
 
 /* Fitxa end */
 
-.house:before {
-    background-image: url(../img/icons/target.svg);    
-}
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 991px) { 

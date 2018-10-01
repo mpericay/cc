@@ -81,7 +81,7 @@
 			  </div>
 			  <div class="modal-body"></div>
 			  <div class="modal-footer">
-				<img data-dismiss="modal" src="img/icons/arrow.svg">
+				<img data-dismiss="modal" src="img/icons/close.svg">
 			  </div>
 			</div>
 		
