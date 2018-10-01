@@ -81,7 +81,23 @@ define(['search', 'bootstrap'], function(search) {
         txtWrap.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
         txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
         buildSocial(parent, props.nom_del_projecte);
+        
+        // more info button
+        if(props.web_del_projecte.trim() != '') buildLink(txtWrap, props.web_del_projecte);
+        
         return parent;
+    };
+    
+    var buildLink = function(div, text) {
+        var infoLink = document.createElement('a'),
+            infoButton = document.createElement('button');
+            
+        infoLink.href = text;
+        infoButton.textContent = "Més informació";
+        infoButton.className = "infoButton";
+        infoButton.type = "button";
+        infoLink.appendChild(infoButton);
+        div.appendChild(infoLink);
     };
     
     var buildSocial = function(div, text) {
