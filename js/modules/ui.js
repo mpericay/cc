@@ -80,7 +80,7 @@ define(['search', 'bootstrap'], function(search) {
         txtWrap.appendChild(buildSheetItem("Descripció del projecte", props.activitat_prevista));
         txtWrap.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
         txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
-        buildSocial(parent, props.nom_del_projecte);
+        buildSocial(txtWrap, props.nom_del_projecte);
         
         // more info button
         if(props.web_del_projecte.trim() != '') buildLink(txtWrap, props.web_del_projecte);
