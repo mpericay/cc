@@ -394,6 +394,28 @@ img.share-buttons {
 
     /* Llista projectes end */
 
+    /* Fitxa */
+
+    .modal-body { 
+        height: auto;
+    }
+    
+    .sheetPic {
+        height: 40%;
+        margin-left: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .txtWrap {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+        overflow-y: hidden;
+    }
+
+    /* Fitxa end */
+
 }
 
 /* Landscape phone to portrait tablet */
@@ -439,6 +461,32 @@ img.share-buttons {
     }
 
     /* Llista projectes end */
+
+    /* Fitxa */
+
+    .modal-header, .subTitle {
+        padding-right: 40px !important;
+    }
+
+    .modal-body { 
+        height: auto;
+    }
+    
+    .sheetPic {
+        height: 40%;
+        margin-left: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .txtWrap {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+        overflow-y: hidden;
+    }
+
+    /* Fitxa end */
 
 }
  
@@ -490,6 +538,34 @@ img.share-buttons {
     }
 
     /* Llista projectes end */
+
+    /* Fitxa */
+
+    .modal-header, .subTitle {
+        padding-right: 40px !important;
+    }
+
+    .modal-body { 
+        height: auto;
+    }
+
+    .sheetPic {
+        height: 40%;
+        margin-left: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .txtWrap {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+        overflow-y: hidden;
+    }
+
+    .infoButton { width: 100%; }
+
+    /* Fitxa end */
 
 }
 
