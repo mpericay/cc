@@ -176,6 +176,7 @@ img.share-buttons {
 .project-wrap {
     list-style: none;
     margin: 20px 0;
+    cursor: pointer;
 }
 
 .searchTitle {
