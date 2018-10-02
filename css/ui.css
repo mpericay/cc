@@ -213,6 +213,8 @@ img.share-buttons {
 .modal-header {
     font-size: 15px;
     font-weight: 500;
+    border: none !important;
+    padding-bottom: 2px !important;
 }
 
 .modal-body { 
@@ -232,10 +234,38 @@ img.share-buttons {
 }
 
 .subTitle {
-    height: 50px;
-    padding: 10px;
+    height: auto;
+    padding: 0 10px 10px;
     overflow-x: hidden;
     background: #fff;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1;
+}
+
+.subTitle > div {
+    display: inline;
+    margin-right: 15px;
+    padding-left: 25px;
+    font-size: 12px;
+}
+
+.subTitle > div::before {
+    content: '.';
+    width: 13px;
+    color: transparent;
+    position: absolute;
+    background-size: contain;
+    margin-left: -20px;
+    background-repeat: no-repeat;
+    margin-top: 3px;
+}
+
+.subPlace::before {
+    background: url(../img/icons/placeholder.svg);
+}
+.subAssociation::before {
+    background: url(../img/icons/home.svg);
 }
 
 .txtWrap {
@@ -264,9 +294,10 @@ img.share-buttons {
 
 .modal-footer {
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
     padding: 10px;
+    border: none !important;
 }
 
 .modal-footer img {
