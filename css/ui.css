@@ -183,12 +183,12 @@ img.share-buttons {
 
 .searchTitle {
     float: right;
-    width: calc(100% - 200px);
-    font-size: 18px;
+    width: calc(100% - 145px);
+    font-size: 15px;
     background: #fff;
     height: 130px;
     position: absolute;
-    left: 170px;
+    left: 130px;
     padding: 15px 20px;
     margin: 0;
 }
@@ -196,16 +196,16 @@ img.share-buttons {
 .searchPic {
     height: 130px;
     float: left;
-    width: 170px;
+    width: 130px;
     margin-left: -15px;
 }
 
 .searchSubtitle {
     position: absolute;
     bottom: 0px;
-    left: 190px;
+    left: 150px;
     max-width: 150px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 /* Llista projectes end */
