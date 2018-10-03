@@ -5,11 +5,11 @@ var require = (function() {
 	return {
 		baseUrl: HERE + "modules/",
 		paths: {
-			"bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min",
-            "css": "//cdnjs.cloudflare.com/ajax/libs/require-css/0.1.10/css.min",
-            "turf": "//cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min",
-            "jquery": "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min",
-			"lunr": "//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.2/lunr.min"
+			"bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min",
+            "css": "https://cdnjs.cloudflare.com/ajax/libs/require-css/0.1.10/css.min",
+            "turf": "https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min",
+            "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min",
+			"lunr": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.2/lunr.min"
 		},
 		shim: {
 			"bootstrap": {
