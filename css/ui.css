@@ -70,6 +70,7 @@ a:hover { text-decoration: none !important; }
     border-top: #CCC solid 1px;
     padding: 10px 30px;
     text-align: right;
+    font-size: smaller;
 }
 /* Footer end */
 
