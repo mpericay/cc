@@ -59,6 +59,7 @@
 									<option value="Tancat">
 								  </datalist>
 								<button type="button" id="searchBtn" class="boto">Buscar</button>
+								<button type="button" id="clearBtn" class="boto">Netejar</button>
 							</form>
 						</div>
 					</div>
