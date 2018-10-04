@@ -53,6 +53,11 @@
 									<option value="Líquens">
 								  </datalist>
 								<div class="form-group" id="searchLoc"><input id="loc" class="form-input" placeholder="Localització"></div>
+								<div class="form-group" id="searchBio"><input list="oberttancat" id="actiu" class="form-input" placeholder="Obert/Tancat"></div>
+								<datalist id="oberttancat">
+									<option value="Obert">
+									<option value="Tancat">
+								  </datalist>
 								<button type="button" id="searchBtn" class="boto">Buscar</button>
 							</form>
 						</div>
