@@ -98,7 +98,7 @@ define(['search', 'bootstrap'], function(search) {
             infoButton = document.createElement('button');
             
         infoLink.href = text;
-        infoButton.textContent = "Més informació";
+        infoButton.textContent = "Web del projecte";
         infoButton.className = "infoButton";
         infoButton.type = "button";
         infoLink.appendChild(infoButton);
