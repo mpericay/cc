@@ -57,14 +57,16 @@ define(['search', 'bootstrap'], function(search) {
             subTitle = document.createElement('div'),
             subPlace = document.createElement('div'),
             subAssociation = document.createElement('div'),
+            activeProject = document.createElement('div'),
             txtWrap = document.createElement('div')
         
+        // write subtitle bar image
         img.setAttribute("src", "img/projects/example.jpg");
         img.className = "sheetPic";
         txtWrap.className = "txtWrap";
         subTitle.className = "subTitle";
         
-        // write subtitle bar and image
+        //elements that are not in the right side
         parent.appendChild(subTitle);
         parent.appendChild(img);
         parent.appendChild(txtWrap);
@@ -72,8 +74,11 @@ define(['search', 'bootstrap'], function(search) {
         subPlace.className = "subPlace";
         subAssociation.textContent = props.entitat;
         subAssociation.className = "subAssociation";
+        activeProject.textContent = "Obert"; //will be props.actiu
+        activeProject.className = "activeProject";
         subTitle.appendChild(subPlace);
         subTitle.appendChild(subAssociation);
+        parent.appendChild(activeProject);
         
         // write all items of sheet
         txtWrap.appendChild(buildSheetItem("Ambit biològic", props.ambit_biologic));

@@ -272,6 +272,13 @@ img.share-buttons {
     background: url(../img/icons/home.svg);
 }
 
+.activeProject {
+    position: absolute;
+    left: 10px;
+    bottom:10px;
+    background: #fff;
+}
+
 .txtWrap {
     width: 50%;
     position: relative;
