@@ -65,11 +65,12 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
     }
     
     var filterByTipus = function(value, pts) {
-        var matchingPoints = turf.featurecollection([]);
-        matchingPoints.features = pts.features.filter(function(pt) {
-          if(pt.properties.tipus === value) return true
+        var matchingPoints = turf.featureCollection([]);
+        matchingPoints.features = pts.filter(function(pt) {
+            var proj = projectsById[pt.ref];
+            if(proj.properties.ambit_biologic === value) return true
         })
-        return matchingPoints;
+        return matchingPoints.features;
     }
     
     return {
@@ -84,6 +85,9 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
        },
        getProject: function(id) {
             return projectsById[id];
+       },
+       filterByTipus: function(value, points) {
+            return filterByTipus(value, points);
        }
     }
 

@@ -5,7 +5,7 @@
 define(['search', 'bootstrap'], function(search) {
     "use strict";
     
-    var makeSearch = function(value) {
+    var makeSearch = function(value, options) {
         value = value ? value : "";
         var results = search.search(value);
           $("#resultsList").empty();
@@ -13,12 +13,21 @@ define(['search', 'bootstrap'], function(search) {
           if (!results.length) {
             $("#noResults").html("No s'han trobat resultats");
           } else {
+            if(options) results = refineSearch(results, options);
             $("#noResults").html("Mostrant <b>" + results.length + "</b> resultats");
             for(var i=0; i < results.length; i++) {
               var proj = search.getProject(results[i].ref);
               $("#resultsList").append(buildSearchResult(proj));
             };
           }        
+    };
+    
+    var refineSearch = function(results, options) {
+        if (options.ambit) {
+            results = search.filterByTipus(options.ambit, results);
+        }
+        
+        return results;
     };
     
 	var buildSearchResult = function (doc) {
@@ -130,7 +139,10 @@ define(['search', 'bootstrap'], function(search) {
     search.loadData("data/projects.geojson", makeSearch);
     
     $("#searchBtn").on("click", function() {
-            makeSearch($("#proj").val());
+            var options = {
+                //ambit: "Peixos"
+            };
+            makeSearch($("#proj").val(), options);
     });
     
     // undo URL navigation when hiding modal
