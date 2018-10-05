@@ -26,6 +26,9 @@ define(['search', 'bootstrap'], function(search) {
         if (options.ambit) {
             results = search.filterByTipus(options.ambit, results);
         }
+        if (options.position) {
+            results = search.orderByPosition(options.position, results);
+        }
         
         return results;
     };
@@ -140,7 +143,11 @@ define(['search', 'bootstrap'], function(search) {
     
     $("#searchBtn").on("click", function() {
             var options = {
-                //ambit: "Peixos"
+                //ambit: "Peixos",
+                /*position: {
+                    lat: 0.966797,
+                    lon: 29.085599
+                }*/
             };
             makeSearch($("#proj").val(), options);
     });

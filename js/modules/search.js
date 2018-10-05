@@ -73,6 +73,40 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
         return matchingPoints.features;
     }
     
+    function orderByPosition(coords, points) {
+        //TODO: management of distance to polygon or point
+        calculateDistance(coords, points);
+        points.sort(compareDistance);
+        return points;
+    }
+    
+    function calculateDistance(coords, points) {
+        var point = {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "Point",
+            "coordinates": [coords.lat, coords.lon]
+          }
+        };
+        
+        for (var i = 0; i < points.length; i+=1) {
+            var proj = projectsById[points[i].ref];
+            //of course, provisional
+            if (proj.properties.ambit_geografic == "Catalunya") {
+               projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[0])
+            } else if (proj.properties.ambit_geografic == "Mediterrani") {
+                projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[1])
+            }
+        }
+    }
+    
+    function compareDistance(a,b) {
+        if (projectsById[a.ref].properties.distance < projectsById[b.ref].properties.distance) return -1;
+        if (projectsById[a.ref].properties.distance < projectsById[b.ref].properties.distance) return 1;
+        return 0;
+    }
+    
     return {
 	   printDistance: function(lat, lon) {
 			return printDistance(lat, lon);
@@ -88,6 +122,9 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
        },
        filterByTipus: function(value, points) {
             return filterByTipus(value, points);
+       },
+       orderByPosition: function(coords, points) {
+            return orderByPosition(coords, points);
        }
     }
 
