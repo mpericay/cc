@@ -283,9 +283,30 @@ img.share-buttons {
 
 .activeProject {
     position: absolute;
-    left: 10px;
-    bottom:10px;
+    left: 20px;
+    line-height: 19px;
+    padding: 3px 7px 3px 20px;
     background: #fff;
+    font-size: 12px;
+}
+
+.activeProject::before {
+    content: '.';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    color: transparent;
+}
+
+.activeProject.obert::before {
+    background: #8BC34A;
+}
+
+.activeProject.tancat::before {
+    background: red;
 }
 
 .txtWrap {
@@ -358,6 +379,14 @@ img.share-buttons {
 
     /* Buscador end */
 
+    /* Fitxa */
+
+    .activeProject {
+        bottom: -10px;
+    }
+
+    /* Fitxa end */
+
 }
 
 
@@ -379,10 +408,18 @@ img.share-buttons {
 
     .boto {
         margin: 10px;
-        max-width: calc(48% - 20px);
+        max-width: calc(48% - 50px);
     }
 
     /* Buscador end */
+
+    /* Fitxa */
+
+    .activeProject {
+        bottom: -10px;
+    }
+
+    /* Fitxa end */
 
 }
 
@@ -471,6 +508,11 @@ img.share-buttons {
         overflow-y: hidden;
     }
 
+    .activeProject {
+        left: 30px;
+        bottom: 20px;
+    }
+
     /* Fitxa end */
 
 }
@@ -547,6 +589,11 @@ img.share-buttons {
         margin-left: 0;
         height: auto;
         overflow-y: hidden;
+    }
+
+    .activeProject {
+        left: 30px;
+        bottom: 20px;
     }
 
     /* Fitxa end */
@@ -626,6 +673,12 @@ img.share-buttons {
         margin-left: 0;
         height: auto;
         overflow-y: hidden;
+    }
+
+    .activeProject {
+        position: fixed;
+        left: 30px;
+        bottom: 20px;
     }
 
     .infoButton { width: 100%; }
