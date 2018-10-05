@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="marti@pericay.com" />
 	<meta name="author" content="hey@marccots.com" />
@@ -33,7 +33,7 @@
 			<div class="search-wrap">
 				<div class="container">
 					<div class="row row-search">
-						<div class="col-md-7 col-lg-6 col-lg-offset-1">
+						<div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-3">
 							<div class="intro-wrap">
 								<div>
 									<h2 class="topTitle">VOLS PARTICIPAR EN PROJECTES D’ESTUDI DE LA DIVERSITAT NATURAL?</h2>
@@ -41,7 +41,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-offset-1 col-md-4 col-lg-3">
+						<div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-2">
 				        	<form class="form-inline" role="search">
 								<div class="form-group" id="searchProj"><input id="proj" class="form-input" placeholder="Projecte"></div>
 								<div class="form-group" id="searchBio"><input list="ambits" id="bio" class="form-input" placeholder="Àmbit biològic"></div>
@@ -53,7 +53,7 @@
 									<option value="Líquens">
 								  </datalist>
 								<div class="form-group" id="searchLoc"><input id="loc" class="form-input" placeholder="Localització"></div>
-								<div class="form-group" id="searchBio"><input list="oberttancat" id="actiu" class="form-input" placeholder="Obert/Tancat"></div>
+								<div class="form-group" id="searchStatus"><input list="oberttancat" id="actiu" class="form-input" placeholder="Obert/Tancat"></div>
 								<datalist id="oberttancat">
 									<option value="Obert">
 									<option value="Tancat">

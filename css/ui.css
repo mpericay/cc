@@ -19,6 +19,7 @@ button:focus, input:focus { outline:0; }
 
 img {
     object-fit: cover;
+    max-width: 100%;
 }
 
 a:hover { text-decoration: none !important; }
@@ -136,9 +137,10 @@ img.share-buttons {
 #searchProj:before { background-image: url(../img/icons/search.svg); }
 #searchBio:before { background-image: url(../img/icons/arrow.svg); background-size: 15px; background-position: 12px 13px; }
 #searchLoc:before { background-image: url(../img/icons/target.svg); }
+#searchStatus:before { background-image: url(../img/icons/padlock.svg); background-size: 17px; background-position: 11px 12px; }
 
 .form-group {
-    width: 100%;
+    width: 48%;
     max-width: 300px;
     padding-bottom: 20px;
 }
@@ -162,13 +164,20 @@ img.share-buttons {
     border: none;
     border-radius: 5px;
     padding: 13px 20px;
-    width: 100%;
+    width: 48%;
     font-size: 12px;
     letter-spacing: 1px;
     max-width: 300px;
 }
 
 .boto:hover { background: #3d3d3d; color: #f5f5f5;}
+
+#clearBtn {
+    background: #d5d5d5;
+    color: #838383;
+}
+
+#clearBtn:hover { background: #d9d9d9; }
 
 /* Buscador end */
 
@@ -338,8 +347,48 @@ img.share-buttons {
 /* Fitxa end */
 
 
+/* Huge devices */
+@media (min-width: 1200px) {
+
+    /* Buscador */
+
+    #searchBio, #searchStatus, #clearBtn {
+        margin-left: 15px;
+    }
+
+    /* Buscador end */
+
+}
+
+
+/* Large devices */
+@media (min-width: 991px) and (max-width: 1199px) {
+
+    /* Buscador */
+
+    .row-search { display: block; }
+
+    .form-group {
+        padding: 10px 10px 5px;
+    }
+
+    .form-inline {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .boto {
+        margin: 10px;
+        max-width: calc(48% - 20px);
+    }
+
+    /* Buscador end */
+
+}
+
+
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 991px) { 
+@media (min-width: 768px) and (max-width: 990px) { 
 
     /* Buscador */
 
@@ -364,7 +413,7 @@ img.share-buttons {
 
     .boto {
         vertical-align: -webkit-baseline-middle;
-        margin: 0 10px;
+        margin: 10px;
         max-width: calc(300px - 20px);
     }
 
@@ -443,7 +492,13 @@ img.share-buttons {
     }
 
     .form-group {
-        margin: 0px auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .boto {
+        max-width: 100%;
+        width: 49%;
     }
 
     /* Buscador end */
@@ -517,10 +572,12 @@ img.share-buttons {
 
     .form-group {
         max-width: 100%;
+        width: 100%;
     }
 
     .boto {
         max-width: 100%;
+        width: 49%;
     }
 
     /* Buscador end */
