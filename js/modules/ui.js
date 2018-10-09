@@ -87,7 +87,7 @@ define(['search', 'bootstrap'], function(search) {
         subAssociation.textContent = props.entitat;
         subAssociation.className = "subAssociation";
         activeProject.textContent = "Obert"; //will be props.actiu
-        activeProject.className = "activeProject";
+        activeProject.className = "activeProject obert";
         subTitle.appendChild(subPlace);
         subTitle.appendChild(subAssociation);
         parent.appendChild(activeProject);
