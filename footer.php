@@ -3,5 +3,5 @@
 			Creative Commons Attribution 4.0 International (<a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>)</p>
 			<p>
 			<!--Consorci format per-->
-			<img src="img/logos/consorci.png" alt="Consorci logo" id="consorciLogo"></p>
+			El Museu de Ciències Naturals de Barcelona és un consorci format per l’Ajuntament de Barcelona i la Generalitat de Catalunya</p>
 		</div>
