@@ -42,7 +42,7 @@ define(['search', 'bootstrap'], function(search) {
         li.className = "col-lg-4 col-sm-6 col-xs-12 project-wrap"
         h2.textContent = doc.properties.nom_del_projecte;
         h2.className = "searchTitle";
-        img.setAttribute("src", "img/projects/example.jpg");
+        img.setAttribute("src", "http://cc.bioexplora.cat/fotos/" + doc.properties.arxiu_foto + ".jpeg");
         img.className = "searchPic";
         p.textContent = doc.properties.ambit_geografic;
         p.className = "searchSubtitle";
@@ -73,7 +73,7 @@ define(['search', 'bootstrap'], function(search) {
             txtWrap = document.createElement('div')
         
         // write subtitle bar image
-        img.setAttribute("src", "img/projects/example.jpg");
+        img.setAttribute("src", "http://cc.bioexplora.cat/fotos/" + props.arxiu_foto + ".jpeg");
         img.className = "sheetPic";
         txtWrap.className = "txtWrap";
         subTitle.className = "subTitle";
