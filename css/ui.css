@@ -218,6 +218,14 @@ img.share-buttons {
     font-size: 12px;
 }
 
+.searchKms {
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+    max-width: 150px;
+    font-size: 12px;
+}
+
 /* Llista projectes end */
 
     

@@ -37,7 +37,8 @@ define(['search', 'bootstrap'], function(search) {
         var li = document.createElement('li'),
             img = document.createElement('img'),
             h2 = document.createElement('h2'),
-            p = document.createElement('p')
+            p = document.createElement('p'),
+            dist = document.createElement('p')
         
         li.className = "col-lg-4 col-sm-6 col-xs-12 project-wrap"
         h2.textContent = doc.properties.nom_del_projecte;
@@ -50,6 +51,11 @@ define(['search', 'bootstrap'], function(search) {
         li.appendChild(h2);
         li.appendChild(img);
         li.appendChild(p);
+        if (doc.properties.distance) {
+            dist.textContent = doc.properties.distance.toFixed(0) + " kms";
+            dist.className = "searchKms";
+            li.appendChild(dist);
+        }
         
         $(li).click(function () {
             //window.location.hash = 'xyz';
@@ -144,10 +150,10 @@ define(['search', 'bootstrap'], function(search) {
     $("#searchBtn").on("click", function() {
             var options = {
                 //ambit: "Peixos",
-                /*position: {
-                    lat: 0.966797,
-                    lon: 29.085599
-                }*/
+                position: {
+                    lat: 41.118159,
+                    lon: 1.236649 // tarragona
+                }
             };
             makeSearch($("#proj").val(), options);
     });
