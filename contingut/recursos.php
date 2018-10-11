@@ -1,16 +1,21 @@
 <div class="container">
     <h2>Recursos / Plataformes</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec metus iaculis metus ultricies malesuada. Vivamus fermentum, sem id ullamcorper volutpat, diam massa fringilla justo, vel gravida sem lectus at eros. Phasellus viverra lorem sit amet urna viverra, ut sagittis sem vehicula. Donec gravida finibus diam, quis bibendum augue bibendum non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla imperdiet posuere turpis, eget rutrum elit gravida eu. Maecenas quis porttitor ipsum. Cras pharetra turpis eu elit gravida, eu ullamcorper lacus faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut vitae arcu odio. Nullam et placerat nisi.</p>
     <h4>Recursos: aplicacions disponibles per registrar observacions de biodiversitat</h4>
     <ul>
-        <li>Recurs 1: <a href="#">www.biodiversitat.com</a></li>
-        <li>Recurs 2: <a href="#">www.natura.com</a></li>
-        <li>Recurs 3: <a href="#">www.gbif.com</a></li>
+        <li>iNaturalist: <a href="https://www.inaturalist.org">https://www.inaturalist.org</a></li>
+        <li>Natusfera: <a href="http://natusfera.gbif.es">http://natusfera.gbif.es</a></li>
+        <li>ZamiaDroid: <a href="http://biodiver.bio.ub.es/zamiaDroid/index.jsp">http://biodiver.bio.ub.es/zamiaDroid/index.jsp</a></li>
     </ul>
       
     <h4>Plataformes: espais on s’agreguen diversos projectes de ciència ciutadana per a l’estudi de la biodiversitat</h4>
     <ul>
-        <li>Plataforma 1: <a href="#">www.biodiversitat.com</a></li>
-        <li>Plataforma 2: <a href="#">www.natura.com</a></li>
+        <li>Portal de Voluntariat Ambiental: <a href="http://www.voluntariatambiental.cat">http://www.voluntariatambiental.cat</a></li>
+        <li>SEO/BirdLife: <a href="https://www.seo.org/participa/voluntariado">https://www.seo.org/participa/voluntariado</a></li>
+        <li>Institució Catalana d'Història Natural: <a href="http://ichn.iec.cat/RecercaParticipativa/RecercaParticipativa_index.htm">http://ichn.iec.cat/RecercaParticipativa/RecercaParticipativa_index.htm</a></li>
+        <li>Observadors del mar: <a href="http://www.observadorsdelmar.cat/reptes-per-projecte.php">http://www.observadorsdelmar.cat/reptes-per-projecte.php</a></li>
+        <li>Catàleg Projectes participatius 2009: <a href="http://bioexplora.cat/biodiversitat/inici">http://bioexplora.cat/biodiversitat/inici</a></li>
+        <li>Institut Català d'Ornitologia: <a href="http://www.ornitologia.org/ca">http://www.ornitologia.org/ca</a></li>
+        <li>BioBlitz Catalunya: <a href="https://bioblitz.cat">https://bioblitz.cat</a></li>
+        
     </ul>
 </div>
