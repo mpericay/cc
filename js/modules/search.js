@@ -112,7 +112,7 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
     
     function compareDistance(a,b) {
         if (projectsById[a.ref].properties.distance < projectsById[b.ref].properties.distance) return -1;
-        if (projectsById[a.ref].properties.distance < projectsById[b.ref].properties.distance) return 1;
+        if (projectsById[a.ref].properties.distance > projectsById[b.ref].properties.distance) return 1;
         return 0;
     }
     
