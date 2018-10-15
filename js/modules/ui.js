@@ -22,15 +22,15 @@ define(['search', 'bootstrap'], function(search) {
           }        
     };
     
-    var refineSearch = function(results, options) {
+    var refineSearch = function(list, options) {
         if (options.ambit) {
-            results = search.filterByTipus(options.ambit, results);
+            list = search.filterByTipus(options.ambit, list);
         }
         if (options.position) {
-            results = search.orderByPosition(options.position, results);
+            list = search.orderByPosition(options.position, list);
         }
         
-        return results;
+        return list;
     };
     
 	var buildSearchResult = function (doc) {
@@ -149,7 +149,7 @@ define(['search', 'bootstrap'], function(search) {
     
     $("#searchBtn").on("click", function() {
             var options = {
-                //ambit: "Peixos",
+                ambit: "Peixos",
                 position: {
                     lat: 41.118159,
                     lon: 1.236649 // tarragona
