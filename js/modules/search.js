@@ -86,27 +86,28 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
           "properties": {},
           "geometry": {
             "type": "Point",
-            "coordinates": [coords.lat, coords.lon]
+            "coordinates": [coords.lon, coords.lat]
           }
         };
         
         for (var i = 0; i < points.length; i+=1) {
             var proj = projectsById[points[i].ref];
             //of course, provisional
-            /*if (proj.properties.ambit_geografic == "Catalunya") {
+            if (proj.properties.ambit_geografic == "Catalunya") {
                projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[0])
-            } else if (proj.properties.ambit_geografic == "Mediterrani") {
+            } else if (proj.properties.ambit_geografic == "Mar Mediterrània") {
                 projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[1])
-            }*/
-            var point2 = {
-              "type": "Feature",
-              "properties": {},
-              "geometry": {
-                "type": "Point",
-                "coordinates": [proj.properties.lat, proj.properties.long]
-              }
-            };            
-            projectsById[points[i].ref].properties.distance = turf.distance(point, point2);
+            } else {
+                var point2 = {
+                  "type": "Feature",
+                  "properties": {},
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [proj.properties.long, proj.properties.lat]
+                  }
+                };            
+                projectsById[points[i].ref].properties.distance = turf.distance(point, point2);
+            }
         }
     }
     
