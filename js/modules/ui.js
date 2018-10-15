@@ -2,8 +2,8 @@
  * @author Martí Pericay <marti@pericay.com>
  */
 
-define(['search', 'bootstrap'], function(search) {
-    "use strict";
+define(['search', 'leaflet', 'bootstrap'], function(search, L) {
+    "use strict"; 
     
     var makeSearch = function(value, options) {
         value = value ? value : "";
@@ -143,7 +143,31 @@ define(['search', 'bootstrap'], function(search) {
         parent.appendChild(itemHeader);
         parent.appendChild(itemText);
         return parent;
-    }
+    };
+    
+    var openMap = function(div) {    
+        $("#mapModal").modal();
+        
+        var center = [41.3, 2.1];
+        var zoom = 8;
+        var decimals = 5; //number of decimals to show lon/lat
+        var map = L.map(div).setView(center, zoom);
+        
+        var Hydda_Full = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+            attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker(new L.LatLng(41.425, 2.221), {
+            draggable: true
+        }).addTo(map);
+        //reflect marker dragging into x and y boxes
+        /*var xBox = $('#xId');
+        var yBox = $('#yId');
+        marker.on('dragend', function (e) {
+            var latlng = e.target.getLatLng();
+            xBox.val(latlng.lng.toFixed(decimals));
+            yBox.val(latlng.lat.toFixed(decimals));
+        });*/        
+    };
     
     search.loadData("data/projects.geojson", makeSearch);
     
@@ -161,6 +185,11 @@ define(['search', 'bootstrap'], function(search) {
     // undo URL navigation when hiding modal
     $('#textModal').on('hidden.bs.modal', function () {
         window.history.pushState(null, 'Home', '.');
+    });
+    
+    // map modal
+    $('#loc').on('click', function () {
+        openMap('map');
     });
     
 

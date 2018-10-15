@@ -9,11 +9,15 @@ var require = (function() {
             "css": "https://cdnjs.cloudflare.com/ajax/libs/require-css/0.1.10/css.min",
             "turf": "https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min",
             "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min",
+			"leaflet": "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet",
 			"lunr": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.2/lunr.min"
 		},
 		shim: {
 			"bootstrap": {
 				deps: ["jquery", "css!https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"]
+			},
+			"leaflet": {
+				deps: ["css!https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css"]
 			},
 			"typeahead": {
 				deps: ["bootstrap"]

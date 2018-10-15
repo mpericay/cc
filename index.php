@@ -75,6 +75,25 @@
         </div>
 		<!-- /#wrapper -->
 
+		<!-- Mapmodal -->
+		<div id="mapModal" class="modal" role="dialog">
+		  <div class="modal-dialog modal-lg">
+		
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header modal-tm3">
+				<button type="button" class="close" data-dismiss="modal"></button>
+				<h4 class="modal-title">Cercar projecte prop de ...</h4>
+			  </div>
+			  <div class="modal-body"><div id="map" style="height: 400px"></div></div>
+			  <div class="modal-footer">
+				<img data-dismiss="modal" src="img/icons/close.svg">
+			  </div>
+			</div>
+		
+		  </div>	  
+		</div>
+
 		<!-- Modal -->
 		<div id="textModal" class="modal" role="dialog">
 		  <div class="modal-dialog modal-lg">
@@ -94,6 +113,7 @@
 		  </div>
 		<?php } ?>			  
 		</div>
+		
 		
 		<?php include "footer.php" ?>
  
