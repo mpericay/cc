@@ -149,7 +149,7 @@ define(['search', 'bootstrap'], function(search) {
     
     $("#searchBtn").on("click", function() {
             var options = {
-                ambit: "Peixos",
+                ambit: $("#bio").val(),
                 position: {
                     lat: 41.118159,
                     lon: 1.236649 // tarragona
