@@ -51,7 +51,8 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         li.appendChild(h2);
         li.appendChild(img);
         li.appendChild(p);
-        if (doc.properties.distance) {
+        //if we're filtering by distance, show the distance
+        if ($("#loc").val()) {
             dist.textContent = doc.properties.distance.toFixed(0) + " kms";
             dist.className = "searchKms";
             li.appendChild(dist);
@@ -148,25 +149,39 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
     var openMap = function(div) {    
         $("#mapModal").modal();
         
-        var center = [41.3, 2.1];
+        var center = [41.388, 2.183];
         var zoom = 8;
-        var decimals = 5; //number of decimals to show lon/lat
+        var decimals = 4; //number of decimals to show lon/lat
         var map = L.map(div).setView(center, zoom);
         
         var Hydda_Full = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
             attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-        var marker = L.marker(new L.LatLng(41.425, 2.221), {
+        var marker = L.marker(new L.LatLng(center[0], center[1]), {
             draggable: true
         }).addTo(map);
         //reflect marker dragging into x and y boxes
-        /*var xBox = $('#xId');
-        var yBox = $('#yId');
         marker.on('dragend', function (e) {
-            var latlng = e.target.getLatLng();
-            xBox.val(latlng.lng.toFixed(decimals));
-            yBox.val(latlng.lat.toFixed(decimals));
-        });*/        
+            showLatLng(e.target.getLatLng());
+        });
+        var showLatLng = function(latlng) {
+            $('#xId').val(latlng.lng.toFixed(decimals));
+            $('#yId').val(latlng.lat.toFixed(decimals));
+        };
+        //show first lat/lng
+        showLatLng(new L.LatLng(center[0], center[1]));
+        
+        //submit
+        var setMapValue = function(value) {
+            $("#loc").val(value);
+            $("#mapModal").modal('hide');
+        }
+        $('#mapOKBtn').on('click', function () {
+            setMapValue($('#xId').val() + " " + $('#yId').val());
+        });
+        $('#mapClearBtn').on('click', function () {
+            setMapValue("");
+        });
     };
     
     search.loadData("data/projects.geojson", makeSearch);
@@ -174,11 +189,18 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
     $("#searchBtn").on("click", function() {
             var options = {
                 ambit: $("#bio").val(),
-                position: {
+                /*position: {
                     lat: 41.118159,
                     lon: 1.236649 // tarragona
-                }
+                }*/
             };
+            var pos = $("#loc").val().split(" ");
+            if (pos[0] && pos[1]) {
+                options.position = {
+                    lat: pos[1],
+                    lon: pos[0]
+                };
+            }
             makeSearch($("#proj").val(), options);
     });
     

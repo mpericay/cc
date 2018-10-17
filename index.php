@@ -85,7 +85,13 @@
 				<button type="button" class="close" data-dismiss="modal"></button>
 				<h4 class="modal-title">Cercar projecte prop de ...</h4>
 			  </div>
-			  <div class="modal-body"><div id="map" style="height: 400px"></div></div>
+			  <div class="modal-body">
+					<div id="map" style="height: 400px"></div>
+					<input id="xId"></input>
+					<input id="yId"></input>
+					<button type="button" id="mapOKBtn">Seleccionar</button>
+					<button type="button" id="mapClearBtn">Eliminar</button>
+			  </div>
 			  <div class="modal-footer">
 				<img data-dismiss="modal" src="img/icons/close.svg">
 			  </div>
