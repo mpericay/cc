@@ -4,4 +4,6 @@
 			<p>
 			<!--Consorci format per-->
 			El Museu de Ciències Naturals de Barcelona és un consorci format per l’Ajuntament de Barcelona i la Generalitat de Catalunya</p>
+			<p>
+			Web desenvolupat per <a href="http://www.pericay.com">www.pericay.com</a> i <a href="http://www.marccots.com">www.marccots.com</a></p>
 		</div>
