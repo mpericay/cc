@@ -3,7 +3,9 @@
  */
 
 define(['search', 'leaflet', 'bootstrap'], function(search, L) {
-    "use strict"; 
+    "use strict";
+    
+    var map;
     
     var makeSearch = function(value, options) {
         value = value ? value : "";
@@ -163,10 +165,13 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
     var openMap = function(div) {    
         $("#mapModal").modal();
         
+        // don't create the map again
+        if (map) return;
+        
         var center = [41.388, 2.183];
         var zoom = 8;
         var decimals = 4; //number of decimals to show lon/lat
-        var map = L.map(div).setView(center, zoom);
+        map = L.map(div).setView(center, zoom);
         
         var Hydda_Full = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
             attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
