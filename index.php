@@ -58,8 +58,8 @@
 									<option value="Obert">
 									<option value="Tancat">
 								  </datalist>
-								<button type="button" id="searchBtn" class="boto">Buscar</button>
-								<button type="button" id="clearBtn" class="boto">Netejar</button>
+								<input type="button" id="searchBtn" class="boto" value="Buscar"></input>
+								<input id="clearBtn" class="boto" type="reset" value="Netejar"></input>
 							</form>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 		
 			<!-- Modal content-->
 			<div class="modal-content">
-			  <div class="modal-header modal-tm3">
+			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"></button>
 				<h4 class="modal-title">Cercar projecte prop de ...</h4>
 			  </div>
@@ -89,8 +89,8 @@
 					<div id="map" style="height: 400px"></div>
 					<input id="xId"></input>
 					<input id="yId"></input>
-					<button type="button" id="mapOKBtn">Seleccionar</button>
-					<button type="button" id="mapClearBtn">Eliminar</button>
+					<input type="button" id="mapOKBtn" value="Seleccionar"></input>
+					<input type="button" id="mapClearBtn" value="Eliminar"></input>
 			  </div>
 			  <div class="modal-footer">
 				<img data-dismiss="modal" src="img/icons/close.svg">
@@ -106,9 +106,9 @@
 		
 			<!-- Modal content-->
 			<div class="modal-content">
-			  <div class="modal-header modal-tm3">
+			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"></button>
-				<h4 class="modal-title">Modal Header</h4>
+				<h4 class="modal-title"></h4>
 			  </div>
 			  <div class="modal-body"></div>
 			  <div class="modal-footer">
