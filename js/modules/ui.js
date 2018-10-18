@@ -22,6 +22,7 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
           }        
     };
     
+    //manage complementary filters
     var refineSearch = function(list, options) {
         if (options.ambit) {
             list = search.filterByTipus(options.ambit, list);
@@ -33,7 +34,8 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         return list;
     };
     
-	var buildSearchResult = function (doc) {
+	// build list of results
+    var buildSearchResult = function (doc) {
         var li = document.createElement('li'),
             img = document.createElement('img'),
             h2 = document.createElement('h2'),
@@ -58,8 +60,8 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
             li.appendChild(dist);
         }
         
+        //open project modal
         $(li).click(function () {
-            //window.location.hash = 'xyz';
             window.history.pushState(null, 'Project', doc.properties.nom_del_projecte);
             $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
             $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
@@ -112,6 +114,7 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         return parent;
     };
     
+    //Project web is not a regular link, but a button
     var buildLink = function(div, text) {
         var infoLink = document.createElement('a'),
             infoButton = document.createElement('button');
@@ -133,6 +136,7 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         $(div).append('<a href="https://twitter.com/share?url=' + encodeURI(location) +'&amp;text=' + text + '&amp;hashtags=" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" class="share-buttons"/></a>');
     };
     
+    //create every item of results list
     var buildSheetItem = function(header, text, className) {
         var parent =  document.createElement('p'),
             itemHeader = document.createElement('h4'),
@@ -175,9 +179,11 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
             $("#loc").val(value);
             $("#mapModal").modal('hide');
         }
+        //select button
         $('#mapOKBtn').on('click', function () {
             setMapValue($('#xId').val() + " " + $('#yId').val());
         });
+        // clear button
         $('#mapClearBtn').on('click', function () {
             setMapValue("");
         });
