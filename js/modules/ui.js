@@ -53,6 +53,9 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         li.appendChild(h2);
         li.appendChild(img);
         li.appendChild(p);
+        
+        handleImageError();
+        
         //if we're filtering by distance, show the distance
         if ($("#loc").val()) {
             dist.textContent = doc.properties.distance.toFixed(0) + " kms";
@@ -65,12 +68,19 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
             window.history.pushState(null, 'Project', doc.properties.nom_del_projecte);
             $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
             $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
+            handleImageError();
             $("#textModal").modal();
             return false;
         });
 
 	  return li
 	};
+    
+    var handleImageError = function() {
+        $('img').error(function(){
+            $(this).attr('src', 'img/empty.jpg');
+        });
+    }
     
     var buildSheetHtml = function (props) {
         var parent = document.createElement('div'),
@@ -189,8 +199,10 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         });
     };
     
+    //make default search on load (no params)
     search.loadData("data/projects.geojson", makeSearch);
     
+    //make search on click
     $("#searchBtn").on("click", function() {
             var options = {
                 ambit: $("#bio").val(),
