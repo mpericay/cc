@@ -160,7 +160,8 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         return parent;
     };
     
-    var createMap = function(div) {    
+    var openMap = function(div) {    
+        $("#mapModal").modal();
         
         var center = [41.388, 2.183];
         var zoom = 8;
@@ -226,15 +227,10 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         window.history.pushState(null, 'Home', '.');
     });
     
-    //when clicking loc, display map
+    // map modal
     $('#loc').on('click', function () {
-        //open modal
-        $("#mapModal").modal();
+        openMap('map');
     });
     
-    // only first time the modal is opened, create the map
-    $('#loc').one('click', function () {
-        createMap('map');
-    });    
 
 });
