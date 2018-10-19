@@ -210,7 +210,18 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
     
     //make search on click
     $("#searchBtn").on("click", function() {
-            var options = {
+           submitSearch();
+    });
+    
+    //make search on enter press
+    $(document).keypress(function(e) {
+        if(e.which == 13) {
+           submitSearch();
+        }
+    });
+    
+    var submitSearch = function() {
+        var options = {
                 ambit: $("#bio").val(),
                 /*position: {
                     lat: 41.118159,
@@ -224,8 +235,8 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
                     lon: pos[0]
                 };
             }
-            makeSearch($("#proj").val(), options);
-    });
+            makeSearch($("#proj").val(), options);        
+    }
     
     // undo URL navigation when hiding modal
     $('#textModal').on('hidden.bs.modal', function () {
