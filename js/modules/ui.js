@@ -58,9 +58,20 @@ define(['search', 'leaflet', 'bootstrap'], function(search, L) {
         
         handleImageError();
         
+        //distance: must we show the kms or a text?
+        var getDistanceText = function(kms) {
+            return kms + " kms";
+            if (kms < 20) {
+                return "Molt a prop";
+            } else if (kms < 80) {
+                return "A prop";
+            } else {
+                return "Força lluny";
+            }
+        }
         //if we're filtering by distance, show the distance
         if ($("#loc").val()) {
-            dist.textContent = doc.properties.distance.toFixed(0) + " kms";
+            dist.textContent = getDistanceText(doc.properties.distance.toFixed(0));
             dist.className = "searchKms";
             li.appendChild(dist);
         }
