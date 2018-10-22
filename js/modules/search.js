@@ -2,7 +2,7 @@
  * @author Martí Pericay <marti@pericay.com>
  */
 
-define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
+define([ 'lunr','turf', 'conf', 'bootstrap'], function(lunr, turf, conf) {
     "use strict";
     
     //index data
@@ -19,7 +19,11 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
       }, "json" );
     
     var loadData = function(url, callback) {
-            $.get( url, function( data ) {
+        if (conf.getMode() == "carto") {
+            url = conf.getApi() + "q=" + encodeURIComponent("SELECT * FROM " + conf.getTable()) + "&format=GeoJSON";
+        }
+        
+        $.get( url, function( data ) {
                 projectsById = data.features.reduce(function (acc, document) {
                     acc[document.properties.id] = document;
                     return acc;
@@ -74,7 +78,6 @@ define([ 'lunr','turf', 'bootstrap'], function(lunr, turf) {
     }
     
     function orderByPosition(coords, points) {
-        //TODO: management of distance to polygon or point
         calculateDistance(coords, points);
         points.sort(compareDistance);
         return points;
