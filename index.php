@@ -80,17 +80,17 @@
 		  <div class="modal-dialog modal-lg">
 		
 			<!-- Modal content-->
-			<div class="modal-content">
+			<div class="modal-content modal-loc">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"></button>
 				<h4 class="modal-title">Cercar projecte prop de ...</h4>
 			  </div>
 			  <div class="modal-body">
-					<div id="map" style="height: 400px"></div>
+					<div id="map"></div>
 					<input id="xId"></input>
 					<input id="yId"></input>
-					<input type="button" id="mapOKBtn" value="Seleccionar"></input>
-					<input type="button" id="mapClearBtn" value="Eliminar"></input>
+					<input type="button" id="mapOKBtn" class="loc-btn" value="Seleccionar"></input>
+					<input type="button" id="mapClearBtn" class="clearBtn loc-btn" value="Eliminar"></input>
 			  </div>
 			  <div class="modal-footer">
 				<img data-dismiss="modal" src="img/icons/close.svg">
