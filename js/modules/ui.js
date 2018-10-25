@@ -27,7 +27,10 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
     //manage complementary filters
     var refineSearch = function(list, options) {
         if (options.ambit) {
-            list = search.filterByTipus(options.ambit, list);
+            list = search.filterByAmbit(options.ambit, list);
+        }
+        if (options.actiu) {
+            list = search.filterByActiu(options.actiu, list);
         }
         if (options.position) {
             list = search.orderByPosition(options.position, list);
@@ -234,10 +237,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
     var submitSearch = function() {
         var options = {
                 ambit: $("#bio").val(),
-                /*position: {
-                    lat: 41.118159,
-                    lon: 1.236649 // tarragona
-                }*/
+                actiu: $("#oberttancat").val()
             };
             var pos = $("#loc").val().split(" ");
             if (pos[0] && pos[1]) {

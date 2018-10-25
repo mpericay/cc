@@ -68,11 +68,13 @@ define([ 'lunr','turf', 'conf', 'bootstrap'], function(lunr, turf, conf) {
         return turf.pointToLineDistance(point, line, {options: 'kilometers'});
     }
     
-    var filterByTipus = function(value, pts) {
+    var filterByFV = function(field, value, pts) {
+        if (!pts) return pts;
+        if (!value) return pts;
         var matchingPoints = turf.featureCollection([]);
         matchingPoints.features = pts.filter(function(pt) {
             var proj = projectsById[pt.ref];
-            if(proj.properties.ambit_biologic === value) return true
+            if(proj.properties[field] === value) return true
         })
         return matchingPoints.features;
     }
@@ -133,8 +135,11 @@ define([ 'lunr','turf', 'conf', 'bootstrap'], function(lunr, turf, conf) {
        getProject: function(id) {
             return projectsById[id];
        },
-       filterByTipus: function(value, points) {
-            return filterByTipus(value, points);
+       filterByAmbit: function(value, points) {
+            return filterByFV("ambit_biologic", value, points);
+       },
+       filterByActiu: function(value, points) {
+            return filterByFV("actiu", value, points);
        },
        orderByPosition: function(coords, points) {
             return orderByPosition(coords, points);
