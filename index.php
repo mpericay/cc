@@ -46,18 +46,25 @@
 								<div class="form-group" id="searchProj"><input id="proj" class="form-input" placeholder="Projecte"></div>
 							  	<div id="searchBio" class="form-group">
 								  <select class="selectpicker" id="bio">
-								    <option value="Ambiental">Ambiental</option>
+								    <option value="" selected>Tots</option>
+									<option value="Ambiental">Ambiental</option>
 									<option value="Aus">Aus</option>
-									<option value="Coleòpters">Coleòpters</option>
+									<option value="Fanerògames marines">Fanerògames marines</option>
 									<option value="General">General</option>
+									<option value="Hàbitat">Hàbitat</option>
+									<option value="Libèl·lules">Libèl·lules</option>
 									<option value="Líquens">Líquens</option>
+									<option value="Meduses">Meduses</option>
+									<option value="Mosquits">Mosquits</option>
+									<option value="Orquídies">Orquídies</option>
 								  </select>
 								</div>
 								<div class="form-group" id="searchLoc"><input id="loc" class="form-input" placeholder="Localització" readonly></div>
 								<div id="searchStatus" class="form-group">
 								 <select class="selectpicker" id="oberttancat">
-									<option value="Obert">Obert</option>
+									<option value="Obert" selected>Obert</option>
 									<option value="Tancat">Tancat</option>
+									<option value="">Tots</option>
 								  </select>
 								</div>
 								<input type="button" id="searchBtn" class="boto" value="Buscar"></input>
