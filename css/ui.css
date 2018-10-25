@@ -92,6 +92,10 @@ img.share-buttons {
     margin-bottom: 40px;
 }
 
+#searchStatus .bootstrap-select, #searchBio .bootstrap-select {
+    width: 100%;
+}
+
 .row-search { display: flex; }
 
 .intro-wrap {

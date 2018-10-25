@@ -44,20 +44,22 @@
 						<div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-2">
 				        	<form class="form-inline" role="search">
 								<div class="form-group" id="searchProj"><input id="proj" class="form-input" placeholder="Projecte"></div>
-								<div class="form-group" id="searchBio"><input list="ambits" id="bio" class="form-input" placeholder="Àmbit biològic"></div>
-								  <datalist id="ambits">
-									<option value="Ambiental">
-									<option value="Aus">
-									<option value="Coleòpters">
-									<option value="General">
-									<option value="Líquens">
-								  </datalist>
+							  	<div id="searchBio" class="form-group">
+								  <select class="selectpicker" id="bio">
+								    <option value="Ambiental">Ambiental</option>
+									<option value="Aus">Aus</option>
+									<option value="Coleòpters">Coleòpters</option>
+									<option value="General">General</option>
+									<option value="Líquens">Líquens</option>
+								  </select>
+								</div>
 								<div class="form-group" id="searchLoc"><input id="loc" class="form-input" placeholder="Localització"></div>
-								<div class="form-group" id="searchStatus"><input list="oberttancat" id="actiu" class="form-input" placeholder="Obert/Tancat"></div>
-								<datalist id="oberttancat">
-									<option value="Obert">
-									<option value="Tancat">
-								  </datalist>
+								<div id="searchStatus" class="form-group">
+								 <select class="selectpicker" id="oberttancat">
+									<option value="Obert">Obert</option>
+									<option value="Tancat">Tancat</option>
+								  </select>
+								</div>
 								<input type="button" id="searchBtn" class="boto" value="Buscar"></input>
 								<input id="clearBtn" class="boto" type="reset" value="Netejar"></input>
 							</form>
