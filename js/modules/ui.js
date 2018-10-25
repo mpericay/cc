@@ -121,8 +121,8 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         subPlace.className = "subPlace";
         subAssociation.textContent = props.entitat;
         subAssociation.className = "subAssociation";
-        activeProject.textContent = "Obert"; //will be props.actiu
-        activeProject.className = "activeProject obert";
+        activeProject.textContent = props.actiu;
+        activeProject.className = "activeProject " + props.actiu.toLowerCase();
         subTitle.appendChild(subPlace);
         subTitle.appendChild(subAssociation);
         parent.appendChild(activeProject);
