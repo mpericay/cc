@@ -24,6 +24,14 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
           }        
     };
     
+    var onLoadFinished = function() {
+        makeSearch();
+        
+        //open project modal if suitable url
+        var doc = search.getProject(page);
+        if(doc) openProject(doc);
+    }
+    
     //manage complementary filters
     var refineSearch = function(list, options) {
         if (options.ambit) {
@@ -82,15 +90,19 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         //open project modal
         $(li).click(function () {
             window.history.pushState(null, 'Project', doc.properties.url_projecte);
-            $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
-            $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
-            handleImageError();
-            $("#textModal").modal();
+            openProject(doc);
             return false;
         });
 
 	  return li
 	};
+    
+    var openProject = function(doc) {
+        $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
+        $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
+        handleImageError();
+        $("#textModal").modal();
+    }
     
     var handleImageError = function() {
         $('img').error(function(){
@@ -220,9 +232,9 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
     };
     
     var getPage = function() {
-        var url = window.location.href;
-        var arr = url.split("/");
-        return arr[3];
+        var url = new URL(window.location.href);
+        var arr = url.pathname.split("/");
+        return arr.slice(-1)[0];
     };
     
     //we search only on home page
@@ -230,7 +242,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
     if (page != "recursos" && page != "contacte") {
     
         //make default search on load (no params)
-        search.loadData("data/projects.geojson", makeSearch);
+        search.loadData("data/projects.geojson", onLoadFinished);
         
         //make search on click
         $("#searchBtn").on("click", function() {
@@ -269,8 +281,6 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
             openMap('map');
         });
         
-        //open project modal if suitable url
-        //alert(search.getProject(page));
     }
     
 
