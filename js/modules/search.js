@@ -44,21 +44,6 @@ define([ 'lunr','turf', 'conf', 'bootstrap'], function(lunr, turf, conf) {
 
     };
     
-    var printDistance = function(lat, lon) {
-        // just an example
-        var point = {
-          "type": "Feature",
-          "properties": {},
-          "geometry": {
-            "type": "Point",
-            "coordinates": [(lat? lat : 0.966797), (lon ? lon : 29.085599)]
-          }
-        };    
-        for (var i = 0; i < ambits.features.length; i+=1) {
-                $("#results").append("<br>Distance to " + ambits.features[i].properties.description + ": " + distanceToPoly(point, ambits.features[i]) + " kms");
-              }
-    };
-    
     var distanceToPoly = function(point, poly) {
         if(turf.booleanWithin(point, poly)) return 0;
         
