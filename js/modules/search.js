@@ -25,11 +25,11 @@ define([ 'lunr','turf', 'conf', 'bootstrap'], function(lunr, turf, conf) {
         
         $.get( url, function( data ) {
                 projectsById = data.features.reduce(function (acc, document) {
-                    acc[document.properties.id] = document;
+                    acc[document.properties.url_projecte] = document;
                     return acc;
                 }, {});
                 idx = lunr(function () {
-                    this.ref('id')
+                    this.ref('url_projecte')
                     this.field('nom_del_projecte')
                   
                     data.features.forEach(function(entry){

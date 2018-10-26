@@ -81,7 +81,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         
         //open project modal
         $(li).click(function () {
-            window.history.pushState(null, 'Project', doc.properties.nom_del_projecte);
+            window.history.pushState(null, 'Project', doc.properties.url_projecte);
             $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
             $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
             handleImageError();
@@ -226,7 +226,8 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
     };
     
     //we search only on home page
-    if (getPage() != "recursos" && getPage() != "contacte") {
+    var page = getPage();
+    if (page != "recursos" && page != "contacte") {
     
         //make default search on load (no params)
         search.loadData("data/projects.geojson", makeSearch);
@@ -267,6 +268,9 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         $('#loc').on('click', function () {
             openMap('map');
         });
+        
+        //open project modal if suitable url
+        //alert(search.getProject(page));
     }
     
 
