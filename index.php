@@ -26,8 +26,8 @@
 
 		<div id="wrapper">
 		<?php $url = $_SERVER['REQUEST_URI'];
-			if(basename($url) == "contacte.php") include "contingut/contacte.php";
-			else if(basename($url) == "recursos.php") include "contingut/recursos.php";
+			if(basename($url) == "contacte") include "contingut/contacte.php";
+			else if(basename($url) == "recursos") include "contingut/recursos.php";
 			else {
 		?>			
 			<div class="search-wrap">

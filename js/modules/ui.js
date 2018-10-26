@@ -219,45 +219,55 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         });
     };
     
-    //make default search on load (no params)
-    search.loadData("data/projects.geojson", makeSearch);
+    var getPage = function() {
+        var url = window.location.href;
+        var arr = url.split("/");
+        return arr[3];
+    };
     
-    //make search on click
-    $("#searchBtn").on("click", function() {
-           submitSearch();
-    });
+    //we search only on home page
+    if (getPage() != "recursos" && getPage() != "contacte") {
     
-    //make search on enter press
-    $(document).keypress(function(e) {
-        if(e.which == 13) {
-           submitSearch();
-        }
-    });
-    
-    var submitSearch = function() {
-        var options = {
-                ambit: $("#bio").val(),
-                actiu: $("#oberttancat").val()
-            };
-            var pos = $("#loc").val().split(" ");
-            if (pos[0] && pos[1]) {
-                options.position = {
-                    lat: pos[1],
-                    lon: pos[0]
-                };
+        //make default search on load (no params)
+        search.loadData("data/projects.geojson", makeSearch);
+        
+        //make search on click
+        $("#searchBtn").on("click", function() {
+               submitSearch();
+        });
+        
+        //make search on enter press
+        $(document).keypress(function(e) {
+            if(e.which == 13) {
+               submitSearch();
             }
-            makeSearch($("#proj").val(), options);        
+        });
+        
+        var submitSearch = function() {
+            var options = {
+                    ambit: $("#bio").val(),
+                    actiu: $("#oberttancat").val()
+                };
+                var pos = $("#loc").val().split(" ");
+                if (pos[0] && pos[1]) {
+                    options.position = {
+                        lat: pos[1],
+                        lon: pos[0]
+                    };
+                }
+                makeSearch($("#proj").val(), options);        
+        }
+        
+        // undo URL navigation when hiding modal
+        $('#textModal').on('hidden.bs.modal', function () {
+            window.history.pushState(null, 'Home', '.');
+        });
+        
+        // map modal
+        $('#loc').on('click', function () {
+            openMap('map');
+        });
     }
-    
-    // undo URL navigation when hiding modal
-    $('#textModal').on('hidden.bs.modal', function () {
-        window.history.pushState(null, 'Home', '.');
-    });
-    
-    // map modal
-    $('#loc').on('click', function () {
-        openMap('map');
-    });
     
 
 });
