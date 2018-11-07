@@ -58,7 +58,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         li.className = "col-lg-4 col-sm-6 col-xs-12 project-wrap"
         h2.textContent = doc.properties.nom_del_projecte;
         h2.className = "searchTitle";
-        img.setAttribute("src", "http://cc.bioexplora.cat/fotos/" + doc.properties.arxiu_foto + ".jpeg");
+        img.setAttribute("src", "fotos/" + doc.properties.arxiu_foto + ".jpeg");
         img.className = "searchPic";
         p.textContent = doc.properties.ambit_geografic;
         p.className = "searchSubtitle";
