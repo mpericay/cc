@@ -43,7 +43,7 @@
 						</div>
 						<div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-2">
 				        	<form class="form-inline" role="search">
-								<div class="form-group" id="searchProj"><input id="proj" class="form-input" placeholder="Projecte"></div>
+								<div class="form-group" id="searchProj"><input id="proj" class="form-input" placeholder="Nom projecte"></div>
 							  	<div id="searchBio" class="form-group">
 								  <select class="selectpicker" id="bio">
 								    <option value="" selected>Tots àmbits biològics</option>

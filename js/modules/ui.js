@@ -253,6 +253,13 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
                submitSearch();
         });
         
+        //make search on click
+        $("#clearBtn").on("click", function() {
+            $('select[id=bio]').val("");
+            $('select[id=oberttancat]').val("");
+            $('.selectpicker').selectpicker('refresh')
+        });
+        
         //make search on enter press
         $(document).keypress(function(e) {
             if(e.which == 13) {
