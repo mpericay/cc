@@ -71,13 +71,14 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         
         //distance: must we show the kms or a text?
         var getDistanceText = function(kms) {
-            return kms + " kms";
-            if (kms < 20) {
-                return "Molt a prop";
-            } else if (kms < 80) {
-                return "A prop";
+            if (kms <= 25) {
+                return "A 25 kms o menys";
+            } else if (kms < 50) {
+                return "Entre 25 i 50 kms";
+            } else if (kms < 100) {
+                return "Entre 50 i 100 kms";
             } else {
-                return "Força lluny";
+                return "A 100 kms o més";
             }
         }
         //if we're filtering by distance, show the distance

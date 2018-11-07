@@ -84,7 +84,9 @@ define([ 'lunr','turf', 'conf', 'bootstrap'], function(lunr, turf, conf) {
             var proj = projectsById[points[i].ref];
             //of course, provisional
             if (proj.properties.ambit_geografic == "Catalunya") {
-               projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[0])
+               projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[0]) + 20;
+            } else if (proj.properties.ambit_geografic == "Espanya") {
+               projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[2]) + 25;
             } else if (proj.properties.ambit_geografic == "Mar Mediterrània") {
                 projectsById[points[i].ref].properties.distance = distanceToPoly(point, ambits.features[1])
             } else {
