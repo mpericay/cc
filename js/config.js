@@ -18,7 +18,7 @@ var require = (function() {
 				deps: ["jquery", "css!https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"]
 			},
 			"select": {
-				deps: ["bootstrap", "css!https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css"]
+				deps: ["bootstrap", "jquery", "css!https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css"]
 			},			
 			"leaflet": {
 				deps: ["css!https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css"]
