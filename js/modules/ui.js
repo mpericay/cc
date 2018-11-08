@@ -8,8 +8,8 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
     var map;
     
     var makeSearch = function(value, options) {
-        value = value ? value : "";
-        var results = search.search(value);
+        value = value ? value + "^10 " + value + "*" : "";//search exact word or word starting with
+        var results = search.search(value); 
           $("#resultsList").empty();
           //if results
           if (!results.length) {
