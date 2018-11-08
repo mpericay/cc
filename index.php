@@ -62,7 +62,7 @@
 								<div class="form-group" id="searchLoc"><input id="loc" class="form-input" placeholder="Localització" readonly></div>
 								<div id="searchStatus" class="form-group">
 								 <select class="selectpicker" id="oberttancat">
-									<option value="" selected>Tots</option>
+									<option value="" selected>Actius o no</option>
 									<option value="Obert">Obert</option>
 									<option value="Tancat">Tancat</option>
 								  </select>
