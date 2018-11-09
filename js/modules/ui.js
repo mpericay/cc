@@ -255,9 +255,12 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         
         //make search on click
         $("#clearBtn").on("click", function() {
+            $('#proj').val("");
+            $('#loc').val("");
             $('select[id=bio]').val("");
             $('select[id=oberttancat]').val("");
-            $('.selectpicker').selectpicker('refresh')
+            $('.selectpicker').selectpicker('refresh');
+            submitSearch();
         });
         
         //make search on enter press

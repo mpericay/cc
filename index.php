@@ -68,7 +68,7 @@
 								  </select>
 								</div>
 								<input type="button" id="searchBtn" class="boto" value="Buscar"></input>
-								<input id="clearBtn" class="boto" type="reset" value="Netejar"></input>
+								<input id="clearBtn" class="boto" type="button" value="Netejar"></input>
 							</form>
 						</div>
 					</div>
