@@ -1,11 +1,12 @@
 		<div class="header">
+			<div class="slogan-resp"><h2>Fem Natura, Som Natura</h2></div> 
 			<div class="logos-left">
 			 	<a href=""><img class="logos" src="img/logos/mnat.png" alt="MCNB logo" id="mcnbLogo"></a>
 			</div>
-			<h2>Fem Natura, Som Natura</h2>
+			<div class="slogan"><h2>Fem Natura, <br>Som Natura</h2></div>
 			<div class="logos-right">
 			  	<a href=""><img class="logos" src="img/logos/gene.png" alt="Generalitat logo" id="geneLogo"></a>
-			</div>   
+			</div>
 		</div>
 
       

@@ -35,13 +35,26 @@ a:hover { text-decoration: none !important; }
     width: 100%;
 }
 
-.logos-left, .logos-right {
+.logos-left, .logos-right, .slogan {
     display: table-cell;
     vertical-align: middle;
 }
 
 .logos-right {
     text-align: right;
+}
+
+.slogan, .slogan-resp {
+    text-align: center;
+}
+
+.slogan-resp { display: none; }
+
+.slogan h2, .slogan-resp h2 {
+    text-align: left;
+    display: inline-block;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* Header logos end */
@@ -520,6 +533,17 @@ img.share-buttons {
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 990px) { 
 
+    /* Header */
+
+    .header { padding: 10px 20px; }
+
+
+    .slogan h2 { font-size: 20px; }
+
+    .logos { max-width: 60%; }
+
+    /* Header end */
+
     /* Buscador */
 
     .row-search { display: block; }
@@ -610,8 +634,35 @@ img.share-buttons {
 
 }
 
+@media (max-width: 767px) { 
+
+    /* Header */
+
+    .header { padding-top: 60px; }
+
+    .slogan { display: none; }
+
+    .slogan-resp { 
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #f5f5f5; 
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    .slogan-resp h2 { font-size: 18px; }
+
+    .logos { max-width: 90%; }
+
+    /* Header end */
+
+}
+
 /* Landscape phone to portrait tablet */
 @media (min-width: 481px) and (max-width: 767px) { 
+    
 
     /* Buscador */
 
@@ -695,6 +746,12 @@ img.share-buttons {
  
 /* Landscape phones and down */
 @media (max-width: 480px) { 
+        
+    /* Header */
+
+    .slogan-resp h2 { font-size: 15px; }
+
+    /* Header end */
 
     /* Buscador */
 
