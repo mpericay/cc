@@ -61,7 +61,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         var foto = doc.properties.arxiu_foto ? "fotos/" + doc.properties.arxiu_foto + ".jpeg" : 'img/empty.jpg';
         img.setAttribute("src",  foto );
         img.className = "searchPic";
-        p.textContent = doc.properties.ambit_geografic;
+        p.textContent = doc.properties.ambit_geografic_text;
         p.className = "searchSubtitle";
   
         li.appendChild(h2);
@@ -131,7 +131,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         parent.appendChild(subTitle);
         parent.appendChild(img);
         parent.appendChild(txtWrap);
-        subPlace.textContent = props.ambit_geografic;
+        subPlace.textContent = props.ambit_geografic_text;
         subPlace.className = "subPlace";
         subAssociation.textContent = props.entitat;
         subAssociation.className = "subAssociation";
@@ -247,7 +247,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
     if (page != "recursos" && page != "contacte") {
     
         //make default search on load (no params)
-        search.loadData("data/projects.geojson", onLoadFinished);
+        search.loadData("data/cc_projects.geojson", onLoadFinished);
         
         //make search on click
         $("#searchBtn").on("click", function() {
