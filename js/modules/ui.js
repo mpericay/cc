@@ -143,7 +143,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
         
         // write all items of sheet
         txtWrap.appendChild(buildSheetItem("Ambit biològic", props.ambit_biologic));
-        txtWrap.appendChild(buildSheetItem("Descripció del projecte", props.activitat_prevista));
+        txtWrap.appendChild(buildSheetItem("Descripció del projecte", props.descripcio_resumida));
         txtWrap.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
         txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
         buildSocial(txtWrap, props.nom_del_projecte);
