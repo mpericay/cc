@@ -201,7 +201,7 @@ img.share-buttons {
 
 #searchBio .dropdown-menu > li > a, #searchStatus .dropdown-menu > li > a {
     padding: 10px 20px;
-    color: rgba(51,51,51,0.4);
+    color: rgba(51,51,51,0.7);
 }
 
 #searchBio .dropdown-menu > .active > a, #searchStatus .dropdown-menu > .active > a {
@@ -238,7 +238,7 @@ img.share-buttons {
 
 #clearBtn, .loc-btn.clearBtn {
     background: #d5d5d5;
-    color: #838383;
+    color: #638383;
 }
 
 #clearBtn:hover, .loc-btn.clearBtn:hover { background: #d9d9d9; }
