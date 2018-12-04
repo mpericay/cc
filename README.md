@@ -2,26 +2,13 @@
 
 Desenvolupament d'un visor de projectes participatius de ciència ciutadana.
 
-## Install npm, git and bower
-
-https://nodejs.org/en/
-
-https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-    
-    npm install -g bower
 
 ## Install Ciència Ciutadana
 
-Requires git, npm and bower.
+Requires git. All additional libraries JS are requested via CDN.
+
+Requires Apache Server with PHP support and mod_rewrite enabled.
 
 Clone this project:
 
     git clone https://github.com/mpericay/cc.git
-
-Install bower dependencies:
-
-    bower install
-    
-Adding dependencies:
-
-    bower install --save <bower_package>

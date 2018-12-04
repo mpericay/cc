@@ -136,7 +136,7 @@
 	<!-- /#container -->
 	
 	<script src="js/config.js"></script>
-	<script src="js/lib/require.js" data-main="ui"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="ui"></script>
     
 </body>
 
