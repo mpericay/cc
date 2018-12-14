@@ -122,7 +122,7 @@ define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
             txtWrap = document.createElement('div')
         
         // write subtitle bar image
-        img.setAttribute("src", "http://cc.bioexplora.cat/fotos/" + props.arxiu_foto + ".jpeg");
+        img.setAttribute("src", "fotos/" + props.arxiu_foto + ".jpeg");
         img.className = "sheetPic";
         txtWrap.className = "txtWrap";
         subTitle.className = "subTitle";
