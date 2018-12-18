@@ -1,9 +1,7 @@
 		<div class="footer">
-			<p>Si no s’indica el contrari els continguts del lloc web 'Fem Natura, Som Natura' es publiquen sota una llicència
-			Creative Commons Attribution 4.0 International (<a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>)</p>
 			<p>
 			<!--Consorci format per-->
-			El Museu de Ciències Naturals de Barcelona és un consorci format per l’Ajuntament de Barcelona i la Generalitat de Catalunya</p>
+			El Museu de Ciències Naturals de Barcelona és un consorci format per l’Ajuntament de Barcelona i la Generalitat de Catalunya. <a href="https://museuciencies.cat/home/notes-legals">Notes legals</a>.</p>
 			<p>
 			Web desenvolupat per <a href="http://www.pericay.com">www.pericay.com</a> i <a href="http://www.marccots.com">www.marccots.com</a>. Disseny exposició per part de <a href="http://www.pfpdisseny.com">Montse Fabregat</a></p>
 		</div>
