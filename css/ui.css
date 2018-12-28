@@ -55,7 +55,11 @@ a:hover { text-decoration: none !important; }
     display: inline-block;
     font-weight: 600;
     margin: 0;
-    font-size: 38px;
+    font-size: 60px;
+}
+
+.slogan h2 {
+    margin-left: -100px;
 }
 
 /* Header logos end */
@@ -656,6 +660,10 @@ img.share-buttons {
     .slogan-resp h2 { font-size: 18px; }
 
     .logos { max-width: 90%; }
+    
+    #somnaturaLogo {
+        display: none;
+    }
 
     /* Header end */
 
