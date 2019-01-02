@@ -45,7 +45,7 @@
 				        	<form class="form-inline" role="search">
 								<div class="form-group" id="searchProj"><input id="proj" class="form-input" placeholder="Nom projecte"></div>
 							  	<div id="searchBio" class="form-group">
-								  <select class="selectpicker" id="bio">
+								  <select class="combo" id="bio">
 								    <option value="" selected>Tots àmbits biològics</option>
 									<option value="Ambiental">Ambiental</option>
 									<option value="Aus">Aus</option>
@@ -61,7 +61,7 @@
 								</div>
 								<div class="form-group" id="searchLoc"><input id="loc" class="form-input" placeholder="Localització" readonly></div>
 								<div id="searchStatus" class="form-group">
-								 <select class="selectpicker" id="oberttancat">
+								 <select class="combo" id="oberttancat">
 									<option value="" selected>Actius o no</option>
 									<option value="Obert">Obert</option>
 									<option value="Tancat">Tancat</option>

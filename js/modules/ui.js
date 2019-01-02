@@ -296,6 +296,8 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
             openMap('map');
         });
         
+        $(".combo").selectpicker();
+        
     }
     
 
