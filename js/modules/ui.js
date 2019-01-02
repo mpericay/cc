@@ -136,7 +136,7 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         subAssociation.textContent = props.entitat;
         subAssociation.className = "subAssociation";
         activeProject.textContent = props.actiu;
-        activeProject.className = "activeProject " + props.actiu.toLowerCase();
+        if(props.actiu) activeProject.className = "activeProject " + props.actiu.toLowerCase();
         subTitle.appendChild(subPlace);
         subTitle.appendChild(subAssociation);
         parent.appendChild(activeProject);
@@ -146,10 +146,10 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         txtWrap.appendChild(buildSheetItem("Descripció del projecte", props.descripcio_resumida));
         txtWrap.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
         txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
-        buildSocial(txtWrap, props.nom_del_projecte);
+        if(props.nom_del_projecte) buildSocial(txtWrap, props.nom_del_projecte);
         
         // more info button
-        if(props.web_del_projecte.trim() != '') buildLink(txtWrap, props.web_del_projecte);
+        if(props.web_del_projecte && props.web_del_projecte.trim() != '') buildLink(txtWrap, props.web_del_projecte);
         
         return parent;
     };
