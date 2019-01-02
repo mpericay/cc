@@ -11,7 +11,8 @@ var require = (function() {
             "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min",
 			"select": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min",
 			"leaflet": "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet",
-			"lunr": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.2/lunr.min"
+			"lunr": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.2/lunr.min",
+			"cookieconsent": "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min"
 		},
 		shim: {
 			"bootstrap": {
@@ -25,6 +26,9 @@ var require = (function() {
 			},
 			"typeahead": {
 				deps: ["bootstrap"]
+			},
+			"cookieconsent": {
+				deps: ["css!https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"]
 			}
             
 		}

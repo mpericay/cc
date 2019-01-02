@@ -2,7 +2,7 @@
  * @author Martí Pericay <marti@pericay.com>
  */
 
-define(['search', 'leaflet', 'bootstrap', 'select'], function(search, L) {
+define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search, L) {
     "use strict";
     
     var map;
