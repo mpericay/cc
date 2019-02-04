@@ -19,7 +19,7 @@ define([], function() {
             return cartoUser;
        },
        getApi: function() {
-            return 'http://' + cartoUser + '.carto.com/api/v2/sql?';
+            return 'https://' + cartoUser + '.carto.com/api/v2/sql?';
        },
        getMode: function() {
             return mode;
