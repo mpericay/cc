@@ -4,12 +4,12 @@
 
 define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search, L) {
     "use strict";
-    
+
     var map;
-    
+
     var makeSearch = function(value, options) {
         value = value ? value + "^10 " + value + "*" : "";//search exact word or word starting with
-        var results = search.search(value); 
+        var results = search.search(value);
           $("#resultsList").empty();
           //if results
           if (!results.length) {
@@ -21,17 +21,17 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
               var proj = search.getProject(results[i].ref);
               $("#resultsList").append(buildSearchResult(proj));
             };
-          }        
+          }
     };
-    
+
     var onLoadFinished = function() {
         makeSearch();
-        
+
         //open project modal if suitable url
         var doc = search.getProject(page);
         if(doc) openProject(doc);
     }
-    
+
     //manage complementary filters
     var refineSearch = function(list, options) {
         if (options.ambit) {
@@ -43,10 +43,10 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         if (options.position) {
             list = search.orderByPosition(options.position, list);
         }
-        
+
         return list;
     };
-    
+
 	// build list of results
     var buildSearchResult = function (doc) {
         var li = document.createElement('li'),
@@ -54,7 +54,7 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
             h2 = document.createElement('h2'),
             p = document.createElement('p'),
             dist = document.createElement('p')
-        
+
         li.className = "col-lg-4 col-sm-6 col-xs-12 project-wrap"
         h2.textContent = doc.properties.nom_del_projecte;
         h2.className = "searchTitle";
@@ -63,13 +63,13 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         img.className = "searchPic";
         p.textContent = doc.properties.ambit_geografic_text;
         p.className = "searchSubtitle";
-  
+
         li.appendChild(h2);
         li.appendChild(img);
         li.appendChild(p);
-        
+
         handleImageError();
-        
+
         //distance: must we show the kms or a text?
         var getDistanceText = function(kms) {
             if (kms <= 25) {
@@ -88,7 +88,7 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
             dist.className = "searchKms";
             li.appendChild(dist);
         }
-        
+
         //open project modal
         $(li).click(function () {
             window.history.pushState(null, 'Project', doc.properties.url_projecte);
@@ -98,20 +98,20 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
 
 	  return li
 	};
-    
+
     var openProject = function(doc) {
         $('#textModal .modal-header').html(doc.properties.nom_del_projecte);
         $('#textModal .modal-body').html(buildSheetHtml(doc.properties));
         handleImageError();
         $("#textModal").modal();
     }
-    
+
     var handleImageError = function() {
         $('img').error(function(){
             $(this).attr('src', 'img/empty.jpg');
         });
     }
-    
+
     var buildSheetHtml = function (props) {
         var parent = document.createElement('div'),
             img = document.createElement('img'),
@@ -120,13 +120,13 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
             subAssociation = document.createElement('div'),
             activeProject = document.createElement('div'),
             txtWrap = document.createElement('div')
-        
+
         // write subtitle bar image
         img.setAttribute("src", "fotos/" + props.arxiu_foto + ".jpeg");
         img.className = "sheetPic";
         txtWrap.className = "txtWrap";
         subTitle.className = "subTitle";
-        
+
         //elements that are not in the right side
         parent.appendChild(subTitle);
         parent.appendChild(img);
@@ -140,25 +140,25 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         subTitle.appendChild(subPlace);
         subTitle.appendChild(subAssociation);
         parent.appendChild(activeProject);
-        
+
         // write all items of sheet
         txtWrap.appendChild(buildSheetItem("Ambit biològic", props.ambit_biologic));
         txtWrap.appendChild(buildSheetItem("Descripció del projecte", props.descripcio_resumida));
         txtWrap.appendChild(buildSheetItem("Activitat prevista", props.activitat_prevista));
-        txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));        
+        txtWrap.appendChild(buildSheetItem("Com participar en el projecte", props.com_participar_en_el_projecte));
         if(props.nom_del_projecte) buildSocial(txtWrap, props.nom_del_projecte);
-        
+
         // more info button
         if(props.web_del_projecte && props.web_del_projecte.trim() != '') buildLink(txtWrap, props.web_del_projecte);
-        
+
         return parent;
     };
-    
+
     //Project web is not a regular link, but a button
     var buildLink = function(div, text) {
         var infoLink = document.createElement('a'),
             infoButton = document.createElement('button');
-            
+
         infoLink.href = text;
         infoButton.textContent = "Web del projecte";
         infoButton.className = "infoButton";
@@ -166,19 +166,19 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         infoLink.appendChild(infoButton);
         div.appendChild(infoLink);
     };
-    
+
     var buildSocial = function(div, text) {
         $(div).append("<h4>Comparteix-ho</h4>");
         //Facebook (old?)
         $(div).append('<a href="http://www.facebook.com/sharer.php?u=' + encodeURI(location) +'" target="_blank"><img src="img/icons/facebook.png" alt="Facebook" class="share-buttons" /></a>');
-        
+
         //Twitter
         $(div).append('<a href="https://twitter.com/share?url=' + encodeURI(location) +'&amp;text=' + text + '&amp;hashtags=" target="_blank"><img src="img/icons/twitter.png" alt="Twitter" class="share-buttons"/></a>');
-        
+
         //Linkedin
         $(div).append('<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURI(location) +'" target="_blank"><img src="img/icons/linkedin.png" alt="LinkedIn" class="share-buttons" /></a>');
     };
-    
+
     //create every item of results list
     var buildSheetItem = function(header, text, className) {
         var parent =  document.createElement('p'),
@@ -187,25 +187,26 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         itemHeader.textContent = header;
         itemText.textContent = text;
         if (className) itemText.className = className;
-        
+
         parent.appendChild(itemHeader);
         parent.appendChild(itemText);
         return parent;
     };
-    
-    var openMap = function(div) {    
+
+    var openMap = function(div) {
         $("#mapModal").modal();
-        
+
         // don't create the map again
         if (map) return;
-        
+
         var center = [41.388, 2.183];
         var zoom = 8;
         var decimals = 4; //number of decimals to show lon/lat
         map = L.map(div).setView(center, zoom);
-        
-        var Hydda_Full = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
-            attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+
+        var Hydda_Full = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         var marker = L.marker(new L.LatLng(center[0], center[1]), {
             draggable: true
@@ -220,7 +221,7 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
         };
         //show first lat/lng
         showLatLng(new L.LatLng(center[0], center[1]));
-        
+
         //submit
         var setMapValue = function(value) {
             $("#loc").val(value);
@@ -235,25 +236,25 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
             setMapValue("");
         });
     };
-    
+
     var getPage = function() {
         var url = new URL(window.location.href);
         var arr = url.pathname.split("/");
         return arr.slice(-1)[0];
     };
-    
+
     //we search only on home page
     var page = getPage();
     if (page != "recursos" && page != "contacte") {
-    
+
         //make default search on load (no params)
         search.loadData("data/cc_projects.geojson", onLoadFinished);
-        
+
         //make search on click
         $("#searchBtn").on("click", function() {
                submitSearch();
         });
-        
+
         //make search on click
         $("#clearBtn").on("click", function() {
             $('#proj').val("");
@@ -263,14 +264,14 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
             $('.selectpicker').selectpicker('refresh');
             submitSearch();
         });
-        
+
         //make search on enter press
         $(document).keypress(function(e) {
             if(e.which == 13) {
                submitSearch();
             }
         });
-        
+
         var submitSearch = function() {
             var options = {
                     ambit: $("#bio").val(),
@@ -283,22 +284,22 @@ define(['search', 'leaflet', 'bootstrap', 'select', 'cookies'], function(search,
                         lon: pos[0]
                     };
                 }
-                makeSearch($("#proj").val(), options);        
+                makeSearch($("#proj").val(), options);
         }
-        
+
         // undo URL navigation when hiding modal
         $('#textModal').on('hidden.bs.modal', function () {
             window.history.pushState(null, 'Home', '.');
         });
-        
+
         // map modal
         $('#loc').on('click', function () {
             openMap('map');
         });
-        
+
         $(".combo").selectpicker();
-        
+
     }
-    
+
 
 });
